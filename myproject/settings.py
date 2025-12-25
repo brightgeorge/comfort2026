@@ -124,9 +124,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'comfort2026',
-        #'USER': 'root',
+        'USER': 'root',
         'PASSWORD': '#123.com#',
-        'PASSWORD': '',
+        #'PASSWORD': '',
         'HOST': 'localhost',
     }
 }
