@@ -9,14 +9,6 @@ import datetime
 from . import admin_dashboard_calculations_br41
 import branch41app
 
-database_name = 'cpg'
-database_password = '#123.com#'
-# database_password = ''
-database_user = 'root'
-database_host = 'localhost'
-
-import pymysql as py
-import pymysql.cursors
 
 
 def branch1_dashboard_ob_ch41(request):

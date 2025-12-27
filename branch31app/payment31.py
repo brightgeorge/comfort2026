@@ -1926,12 +1926,6 @@ from django.contrib import messages
 from branch31app.models import *
 import datetime
 
-database_name = 'cpg'
-database_password = '#123.com#'
-database_user = 'root'
-database_host = 'localhost'
-
-import pymysql as py
 
 def choose_user_ob_ch31(request):
     if 'username' in request.session:

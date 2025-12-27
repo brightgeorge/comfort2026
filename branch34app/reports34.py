@@ -6,13 +6,7 @@ from django.contrib import messages
 from branch34app.models import *
 import datetime
 
-database_name = 'cpg'
-database_password = '#123.com#'
-database_user = 'root'
-database_host = 'localhost'
 
-import pymysql as py
-import pymysql.cursors
 
 def detailed_report_choose_months_ob_ch34(request):
     if 'username' in request.session:
