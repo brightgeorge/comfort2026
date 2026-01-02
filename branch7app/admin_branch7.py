@@ -153,8 +153,8 @@ def multiple_branch1_room_create_regi7(request):
 
                 styp = [
 
-                    '5',
                     '4',
+                    '5',
                     '4',
                     '2',
                     '2',
@@ -615,7 +615,7 @@ def multiple_single_pg1_bed_create_regi7(request):
                 '101',
                 '101',
                 '101',
-                '101',
+                '102',
                 '102',
                 '102',
                 '102',
@@ -639,7 +639,7 @@ def multiple_single_pg1_bed_create_regi7(request):
                 '101',
                 '101',
                 '101',
-                '101',
+                '102',
                 '102',
                 '102',
                 '102',
@@ -659,15 +659,15 @@ def multiple_single_pg1_bed_create_regi7(request):
 
             c = [
 
-                '5',
-                '5',
-                '5',
-                '5',
-                '5',
                 '4',
                 '4',
                 '4',
                 '4',
+                '5',
+                '5',
+                '5',
+                '5',
+                '5',
                 '4',
                 '4',
                 '4',
@@ -684,14 +684,14 @@ def multiple_single_pg1_bed_create_regi7(request):
             d = [
 
                 '1',
+                '3',
+                '4',
+                '2',
                 '2',
                 '3',
                 '4',
                 '5',
-                '2',
-                '3',
-                '4',
-                '5',
+                '1',
                 '1',
                 '2',
                 '3',
