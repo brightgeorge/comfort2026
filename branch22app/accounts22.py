@@ -521,46 +521,21 @@ def regi_multiple_new_item22(request):
             return render(request, 'branches/branch22/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'ZAKATH',
-                'DRIANAGE CLEANING',
                 'TATA SKY',
-                'ION',
-                'MONTHLY GUEST RENT',
-                'DAILY GUEST RENT',
-                'BORE',
                 'TANKER',
-                'WATER PURIFY',
-                'WATER BILL',
                 'CLEANING ACCESSORIES',
-                'ELECTRIC',
-                'PLUMBING',
-                'COMMISION',
-                'POLICE',
-                'REFUND',
-                'PAINTING',
-                'MONTHLY BUILDING RENT',
-                'AUTOMATIC',
+                'WATER BILL',
                 'ELECTRIC BILL',
-                'ARIF',
-                'ACCOUNTING',
-                'CLEANING LADY',
-                'BAPPY',
-                'SECURITY',
-                'GEAZER REP',
-                'GEAZER',
-                'TRANSPORT CHARGE',
-                'TV',
-                'FAN',
-                'LOCK',
+                'PLUMBING',
+                'ELECTRIC',
+                'OTHER EXP',
                 'MONTHLY MESS',
-                'SPINDAL',
-                'BRIGHT',
-                'OTHER EXPENSES',
-                'WASHING MACHINE',
+                'MONTHLY BUILDING RENT',
+                'MONTHLY GUEST RENT',
 
             ]
             item_category = [
-                'SALARY',
+
                 'PRESTIGE 2',
                 'PRESTIGE 2',
                 'PRESTIGE 2',
@@ -570,30 +545,6 @@ def regi_multiple_new_item22(request):
                 'PRESTIGE 2',
                 'PRESTIGE 2',
                 'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'PRESTIGE 2',
-                'SALARY',
                 'PRESTIGE 2',
                 'PRESTIGE 2',
 
@@ -937,15 +888,19 @@ def regi_multiple_new_ledger22(request):
         if lr == False:
 
             ledger_name = [
+                'PRESTIGE 2',
 
             ]
             contact_person_name = [
+                '0',
 
             ]
             contact_person_number = [
+                '0',
 
             ]
             addres = [
+                '0',
 
             ]
 
@@ -1328,6 +1283,9 @@ def regi_multiple_new_accounts_book22(request):
             return render(request, 'branches/branch22/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'SALARY',
+                'PURCHASE',
+                'RENT',
 
             ]
             for i in range(len(accounts_book_name)):

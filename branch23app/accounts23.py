@@ -519,47 +519,21 @@ def regi_multiple_new_item23(request):
             return render(request, 'branches/branch23/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'CLEANING LADY',
-                'ELECTRIC BILL',
-                'ZAKATH',
-                'MOTOR REPAIR',
-                'BORE',
-                'TATA SKY',
-                'ION',
                 'MONTHLY GUEST RENT',
-                'DAILY GUEST RENT',
-                'TANKER',
-                'WATER PURIFY',
-                'DRIANAGE CLEANING',
-                'CLEANING ACCESSORIES',
+                'MONTHLY BUILDING RENT',
+                'MONTHLY MESS',
+                'OTHER EXP',
                 'ELECTRIC',
                 'PLUMBING',
-                'COMMISION',
-                'POLICE',
-                'REFUND',
-                'PAINTING',
-                'MONTHLY BUILDING RENT',
-                'AUTOMATIC',
-                'ACCOUNTING',
-                'RANJAN',
-                'ARIF',
-                'BAPPY',
-                'SANTHOSH',
-                'GEAZER REP',
-                'GEAZER',
-                'FAN',
-                'FAN REP',
-                'MONTHLY MESS',
-                'SPINDAL',
-                'LOCK',
-                'BRIGHT',
-                'OTHER EXPENSES',
+                'ELECTRIC BILL',
+                'WATER BILL',
+                'CLEANING ACCESSORIES',
+                'TANKER',
+                'TATA SKY',
 
             ]
             item_category = [
-                'SALARY',
-                'PRESTIGE 3',
-                'SALARY',
+
                 'PRESTIGE 3',
                 'PRESTIGE 3',
                 'PRESTIGE 3',
@@ -570,27 +544,6 @@ def regi_multiple_new_item23(request):
                 'PRESTIGE 3',
                 'PRESTIGE 3',
                 'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'PRESTIGE 3',
-                'SALARY',
                 'PRESTIGE 3',
 
             ]
@@ -933,15 +886,19 @@ def regi_multiple_new_ledger23(request):
         if lr == False:
 
             ledger_name = [
+                'PRESTIGE 3',
 
             ]
             contact_person_name = [
+                '0',
 
             ]
             contact_person_number = [
+                '0',
 
             ]
             addres = [
+                '0',
 
             ]
 
@@ -1324,6 +1281,9 @@ def regi_multiple_new_accounts_book23(request):
             return render(request, 'branches/branch23/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'SALARY',
+                'PURCHASE',
+                'RENT',
 
             ]
             for i in range(len(accounts_book_name)):

@@ -522,68 +522,22 @@ def regi_multiple_new_item24(request):
             return render(request, 'branches/branch24/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'CLEANING LADY',
-                'ZAKATH',
-                'ELECTRIC BILL',
-                'ACCOUNTIG',
-                'ARIF',
-                'BAPPY',
-                'BUBLU',
-                'SECURITY',
-                'BRIGHT',
-                'OTHER EXPENSES',
-                'LOCK',
-                'SPINDAL',
-                'FAN REP',
-                'FAN',
-                'GEAZER REP',
-                'GEAZER',
-                'AUTOMATIC',
-                'PAINTING',
-                'REFUND',
-                'POLICE',
-                'COMMISION',
-                'PLUMBING',
-                'ELECTRIC',
-                'CLEANING ACCESSORIES',
-                'DRIANAGE CLEANING',
-                'WATER BILL',
-                'WATER PURIFY',
-                'TANKER',
-                'DAILY GUEST RENT',
-                'MONTHLY MESS',
-                'MONTHLY BUILDING RENT',
+
                 'MONTHLY GUEST RENT',
-                'ION',
+                'MONTHLY BUILDING RENT',
+                'MONTHLY MESS',
+                'OTHER EXP',
+                'ELECTRIC',
+                'PLUMBING',
+                'ELECTRIC BILL',
+                'WATER BILL',
+                'CLEANING ACCESSORIES',
+                'TANKER',
                 'TATA SKY',
-                'BORE',
 
             ]
             item_category = [
-                'SALARY',
-                'SALARY',
-                'PRESTIGE 4',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
-                'PRESTIGE 4',
+
                 'PRESTIGE 4',
                 'PRESTIGE 4',
                 'PRESTIGE 4',
@@ -936,15 +890,19 @@ def regi_multiple_new_ledger24(request):
         if lr == False:
 
             ledger_name = [
+                'PRESTIGE 4',
 
             ]
             contact_person_name = [
+                '0',
 
             ]
             contact_person_number = [
+                '0',
 
             ]
             addres = [
+                '0',
 
             ]
 
@@ -1327,6 +1285,9 @@ def regi_multiple_new_accounts_book24(request):
             return render(request, 'branches/branch24/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'SALARY',
+                'PURCHASE',
+                'RENT',
 
             ]
             for i in range(len(accounts_book_name)):
