@@ -521,10 +521,34 @@ def regi_multiple_new_item31(request):
         else:
             item_name = [
 
+                'MONTHLY MESS',
+                'DAILY GUEST RENT',
+                'MONTHLY GUEST RENT',
+                'TANKER',
+                'WATER BILL',
+                'WATER PURIFY',
+                'ELECTRIC',
+                'ELECTRIC BILL',
+                'PLUMBING',
+                'TATA SKY',
+                'ION',
+                'OTHER EXPENSE',
 
             ]
             item_category = [
 
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
+                'PERFECT1',
 
             ]
             for i in range(len(item_name)):
