@@ -207,23 +207,33 @@ margin-top : 10px;
 
 
              {% if name == 'admin' %}
-      <a href="{% url 'admin_dashboard' %}">
-       <!-- <img src="{% static 'admindashboard/assets/images/logo-icon.png' %}" class="logo-icon" alt="logo icon">-->
-       <h5 class="logo-text">Open Bright PG MGT </h5>
-     </a>
-         {% else %}
+    <a href="{% url 'admin_dashboard' %}">
+        <h5 class="logo-text">Open Bright PG MGT</h5>
+    </a>
 
-          <a href="#">
-       <!-- <img src="{% static 'admindashboard/assets/images/logo-icon.png' %}" class="logo-icon" alt="logo icon">-->
-       <h5 class="logo-text">Open Bright PG MGT </h5>
-     </a>
-
-         {% endif %}
+{% else %}
+    <a href="#">
+        <h5 class="logo-text">Open Bright PG MGT</h5>
+    </a>
+{% endif %}
 
 
    </div>
    <ul class="sidebar-menu do-nicescrol">
-      <li class="sidebar-header"><h6 style="text-decoration:underline;">.......* COMFORT 1 *.......</h6></li>
+
+{% if name == 'Comfortadmin' %}
+    <li class="sidebar-header">
+        <a href="{% url 'Comfortadmin_dashboard' %}">
+            <h6 style="text-decoration:underline;">.......* COMFORT 1 *.......</h6>
+        </a>
+    </li>
+{% else %}
+    <li class="sidebar-header">
+        <h6 style="text-decoration:underline;">.......* COMFORT 1 *.......</h6>
+    </li>
+{% endif %}
+
+
 
       <li>
         <a href="{% url 'branch1_dashboard_ob_ch1' %}">
