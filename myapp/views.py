@@ -47,6 +47,29 @@ def login_request(request):
                 }
                 return render(request,'admindashboard/adminindex.html',context)
 
+
+            if role == 'ComfortAdmin':
+                request.session['username'] = username
+                us = request.session['username']
+                import branch1app
+                bgs = branch1app.models.background_color.objects.all().filter(username=us)
+                bg = branch1app.models.background_color.objects.all().filter(username=us).exists()
+                a = []
+                if bg == True:
+                    a.append(us)
+                else:
+                    a.append('f')
+
+                context = {
+                    'bg': bgs,
+                    'us': us,
+                    'th_us': a[0],
+                    'user': loginobj,
+                    'name': us
+                }
+                return render(request, 'admindashboard/comfort/comfortindex.html', context)
+
+
             if role=='User':
                 request.session['username'] = username
                 us = request.session['username']
@@ -514,6 +537,18 @@ def admin_dashboard(request):
 
     }
     return render (request,'admindashboard/adminindex.html',context)
+
+
+
+
+def Comfortadmin_dashboard(request):
+    us = request.session['username']
+
+    context = {
+        'name': us,
+
+    }
+    return render (request,'admindashboard/comfort/comfortindex.html',context)
 
 
 def user_dashboard_old(request):

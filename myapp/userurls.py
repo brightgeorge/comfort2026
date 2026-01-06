@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('login_request/', views.login_request, name='login_request'),
     path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('Comfortadmin_dashboard', views.Comfortadmin_dashboard, name='Comfortadmin_dashboard'),
 
     # ****user start here *****
     path('view_all_users/', views.view_all_users, name='view_all_users'),
