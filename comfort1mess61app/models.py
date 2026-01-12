@@ -7,18 +7,18 @@ class br2test(models.Model):
 
 
 class room_pg1(models.Model):
-    roon_no = models.FloatField()
+    roon_no = models.IntegerField()
     room_name = models.CharField(max_length=100)
     share_type = models.IntegerField()
     created_by = models.CharField(max_length=100)
 
 class pg1_new_beds(models.Model):
-    roon_no = models.FloatField()
+    roon_no = models.IntegerField()
     room_name = models.CharField(max_length=100)
     bed_no = models.IntegerField()
     created_by = models.CharField(max_length=100)
 
-    bed_code = models.FloatField()
+    bed_code = models.IntegerField()
     guest_code = models.IntegerField()
     guest_join_date = models.CharField(max_length=50)
     guest_join_month = models.CharField(max_length=50)

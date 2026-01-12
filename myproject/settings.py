@@ -74,6 +74,9 @@ INSTALLED_APPS = [
     'branch52app',
     'branch53app',
 
+    'comfort1mess61app',
+    'prestige1mess81app',
+
     'ledger_app',
 ]
 
