@@ -1107,12 +1107,12 @@ class pg1_new_beds(models.Model):
 
 
 class pg1_new_guest(models.Model):
-    roon_no = models.IntegerField()
+    roon_no = models.FloatField()
     room_name = models.CharField(max_length=100)
     bed_no = models.IntegerField()
     created_by = models.CharField(max_length=100)
 
-    bed_code = models.IntegerField()
+    bed_code = models.FloatField()
     guest_code = models.IntegerField()
     guest_join_date = models.CharField(max_length=50)
     guest_join_month = models.CharField(max_length=50)
