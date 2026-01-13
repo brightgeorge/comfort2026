@@ -521,19 +521,24 @@ def regi_multiple_new_item7(request):
             return render(request, 'branches/branch7/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'THAMEES',
-                'CLEANING LADY',
-                'OTHER EXPENSE',
-                'WATER BILL',
-                'ELECTRIC BILL',
-                'MONTHLY MESS',
-                'MONTHLY GUEST RENT',
+
+                'ION',
+                'CLEANING ACCESSORIES',
+                'PLUMBING',
+                'ELECTRIC',
                 'MONTHLY BUILDING RENT',
+                'MONTHLY GUEST RENT',
+                'MONTHLY MESS',
+                'ELECTRIC BILL',
+                'WATER BILL',
+                'OTHER EXPENSE',
 
             ]
             item_category = [
-                'SALARY',
-                'SALARY',
+                'COMFORT 6',
+                'COMFORT 6',
+                'COMFORT 6',
+                'COMFORT 6',
                 'COMFORT 6',
                 'COMFORT 6',
                 'COMFORT 6',

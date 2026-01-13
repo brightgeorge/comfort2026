@@ -523,22 +523,20 @@ def regi_multiple_new_item6(request):
             return render(request, 'branches/branch6/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'ION',
-                'TATA SKY',
-                'DAILY GUEST RENT',
-                'MONTHLY BUILDING RENT',
-                'MONTHLY MESS',
-                'MONTHLY GUEST RENT',
-                'TANKER',
-                'ELECTRIC BILL',
-                'PLUMBING',
-                'ELECTRIC',
-                'SALARY',
+                'CLEANING ACCESSORIES',
                 'OTHER EXP',
+                'ELECTRIC',
+                'PLUMBING',
+                'ELECTRIC BILL',
+                'TANKER',
+                'MONTHLY GUEST RENT',
+                'MONTHLY MESS',
+                'MONTHLY BUILDING RENT',
+                'DAILY GUEST RENT',
+                'ION',
 
             ]
             item_category = [
-                'COMFORT PG 5',
                 'COMFORT PG 5',
                 'COMFORT PG 5',
                 'COMFORT PG 5',
