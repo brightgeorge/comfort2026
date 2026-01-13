@@ -46,6 +46,8 @@ import branch51app.b51userurls
 import branch52app.b52userurls
 import branch53app.b53userurls
 
+import comfort1mess61app.b61userurls
+
 import ledger_app.ledgerappuserurls
 
 urlpatterns = [
@@ -79,6 +81,8 @@ urlpatterns = [
     path('br51/', include(branch51app.b51userurls)),
     path('br52/', include(branch52app.b52userurls)),
     path('br53/', include(branch53app.b53userurls)),
+
+    path('br61/', include(comfort1mess61app.b61userurls)),
 
     path('ledgerapp/', include(ledger_app.ledgerappuserurls)),
 
