@@ -522,53 +522,20 @@ def regi_multiple_new_item41(request):
             return render(request, 'branches/branch41/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'ACCOUNTING',
-                'SANTHOSH 2',
-                'KEB',
-                'SABARANG',
-                'KONIA LIFT',
-                'ZAKATH',
-                'ASHIF',
-                'BORE',
-                'TATA SKY',
-                'ION',
-                'MONTHLY GUEST RENT',
-                'MONTHLY MESS',
-                'DAILY GUEST RENT',
-                'TANKER',
-                'WATER PURIFY',
-                'WATER BILL',
-                'DRIANAGE CLEANING',
-                'CLEANING ACCESSORIES',
-                'COMMISION',
-                'POLICE',
-                'REFUND',
-                'ELECTRIC',
                 'PLUMBING',
-                'PAINTING',
-                'AUTOMATIC',
-                'FAN REP',
-                'FAN',
-                'SPINDAL',
-                'LOCK',
-                'OTHER EXPENSES',
-                'BRIGHT',
-                'SANTHOSH',
-                'DEVINDER',
-                'MUKESH',
-                'BABA',
-                'NASEEM',
-                'AASHIF',
+                'ELECTRIC',
+                'ELECTRIC BILL',
+                'WATER BILL',
+                'CLEANING ACCESSORIES',
+                'TANKER',
+                'TATA SKY',
+                'OTHER EXP',
+                'MONTHLY MESS',
+                'MONTHLY GUEST RENT',
 
             ]
             item_category = [
-                'SALARY',
-                'SALARY',
-                'HAPPY HOMES',
-                'SALARY',
-                'HAPPY HOMES',
-                'SALARY',
-                'SALARY',
+
                 'HAPPY HOMES',
                 'HAPPY HOMES',
                 'HAPPY HOMES',
@@ -579,26 +546,6 @@ def regi_multiple_new_item41(request):
                 'HAPPY HOMES',
                 'HAPPY HOMES',
                 'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'HAPPY HOMES',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
 
             ]
             for i in range(len(item_name)):
@@ -940,15 +887,19 @@ def regi_multiple_new_ledger41(request):
         if lr == False:
 
             ledger_name = [
+                'HAPPY HOMES',
 
             ]
             contact_person_name = [
+                '0',
 
             ]
             contact_person_number = [
+                '0',
 
             ]
             addres = [
+                '0',
 
             ]
 
@@ -1332,6 +1283,9 @@ def regi_multiple_new_accounts_book41(request):
             return render(request, 'branches/branch41/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'PURCHASE',
+                'SALARY',
+                'RENT',
 
             ]
             for i in range(len(accounts_book_name)):

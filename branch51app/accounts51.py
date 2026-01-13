@@ -162,10 +162,9 @@ def regi_multiple_new_category51(request):
         else:
 
             multiple_category_names = [
-                'COMFORT 1',
-                'KITCHEN SALARY',
                 'SALARY',
-                'GROCERRY',
+                'COMFORT LADIES 1',
+
             ]
 
             for i in range(len(multiple_category_names)):
@@ -523,9 +522,31 @@ def regi_multiple_new_item51(request):
             return render(request, 'branches/branch51/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
+                'OTHER EXP',
+                'WATER BILL',
+                'TANKER',
+                'TATA SKY',
+                'ION',
+                'CLEANING ACCESSORIES',
+                'PLUMBING',
+                'ELECTRIC',
+                'ELECTRIC BILL',
+                'MONTHLY GUEST RENT',
+                'MONTHLY MESS',
 
             ]
             item_category = [
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
+                'COMFORT LADIES 1',
 
             ]
             for i in range(len(item_name)):
@@ -867,16 +888,17 @@ def regi_multiple_new_ledger51(request):
         if lr == False:
 
             ledger_name = [
+                'COMFORT LADIES 1',
 
             ]
             contact_person_name = [
-
+                '0',
             ]
             contact_person_number = [
-
+                '0',
             ]
             addres = [
-
+                '0',
             ]
 
             for i in range(len(ledger_name)):
@@ -1260,6 +1282,9 @@ def regi_multiple_new_accounts_book51(request):
             return render(request, 'branches/branch51/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'PURCHASE',
+                'SALARY',
+                'RENT',
 
             ]
             for i in range(len(accounts_book_name)):

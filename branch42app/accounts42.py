@@ -522,25 +522,14 @@ def regi_multiple_new_item42(request):
             return render(request, 'branches/branch42/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-                'FAN',
-                'SANTHOSH',
-                'GARBAGE',
-                'ACCOUNTS',
-                'ZAKATH',
                 'PLUMBING',
-                'COMMISION',
-                'REFUND',
-                'WATER PURIFIER',
+                'ELECTRIC',
                 'WATER BILL',
-                'ELECTRICITY BILL',
-                'OTHER EXPENSE',
-                'TATA SKY',
+                'ELECTRIC BILL',
                 'ION',
-                'THARA CLEANING LADY',
-                'HASEEB',
-                'NOUSHADKA',
-                'ANEEZKA',
+                'TATA SKY',
                 'CLEANING ACCESSORIES',
+                'OTHER EXP',
                 'MONTHLY MESS',
                 'MONTHLY GUEST RENT',
 
@@ -549,21 +538,10 @@ def regi_multiple_new_item42(request):
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
-                'SALARY',
-                'SALARY',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
-                'HAPPY HOME 2',
-                'HAPPY HOME 2',
-                'HAPPY HOME 2',
-                'HAPPY HOME 2',
-                'HAPPY HOME 2',
-                'SALARY',
-                'SALARY',
-                'SALARY',
-                'SALARY',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
                 'HAPPY HOME 2',
@@ -908,15 +886,19 @@ def regi_multiple_new_ledger42(request):
         if lr == False:
 
             ledger_name = [
+                'HAPPY HOMES 2',
 
             ]
             contact_person_name = [
+                '0',
 
             ]
             contact_person_number = [
+                '0',
 
             ]
             addres = [
+                '0',
 
             ]
 
@@ -1301,6 +1283,9 @@ def regi_multiple_new_accounts_book42(request):
             return render(request, 'branches/branch42/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
+                'SALARY',
+                'RENT',
+                'PURCHASE',
 
             ]
             for i in range(len(accounts_book_name)):
