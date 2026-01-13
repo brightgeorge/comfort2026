@@ -162,10 +162,8 @@ def regi_multiple_new_category53(request):
         else:
 
             multiple_category_names = [
-                'COMFORT 1',
-                'KITCHEN SALARY',
                 'SALARY',
-                'GROCERRY',
+                'COMFORT LADIES 3',
             ]
 
             for i in range(len(multiple_category_names)):
@@ -523,10 +521,28 @@ def regi_multiple_new_item53(request):
             return render(request, 'branches/branch53/accounts/creater_master/items/view_all_items.html', context)
         else:
             item_name = [
-
+                'OTHER EXPENSE',
+                'PLUMBING',
+                'ELECTRIC',
+                'WATER BILL',
+                'ELECTRIC BILL',
+                'CLEANING ACCESSORIES',
+                'TATA SKY',
+                'ION',
+                'MONTHLY MESS',
+                'MONTHLY GUEST RENT',
             ]
             item_category = [
-
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
+                'COMFORT LADIES 3',
             ]
             for i in range(len(item_name)):
                 ic = table1()
@@ -867,16 +883,16 @@ def regi_multiple_new_ledger53(request):
         if lr == False:
 
             ledger_name = [
-
+                'COMFORT LADIES 3',
             ]
             contact_person_name = [
-
+                '0',
             ]
             contact_person_number = [
-
+                '0',
             ]
             addres = [
-
+                '0',
             ]
 
             for i in range(len(ledger_name)):
@@ -1258,7 +1274,9 @@ def regi_multiple_new_accounts_book53(request):
             return render(request, 'branches/branch53/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             accounts_book_name = [
-
+                'PURCHASE',
+                'SALARY',
+                'RENT',
             ]
             for i in range(len(accounts_book_name)):
                 ic = accounts_book()
