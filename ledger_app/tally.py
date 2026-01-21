@@ -233,3 +233,101 @@ def debit_all_entry_history(request):
         'entries': debits,
     }
     return render(request, 'ledger_app/debit_all_entry_history.html', context)
+
+
+#########################################
+####new server backup code start here
+########################################
+
+def view_all_LedgerEntry_entries(request):
+    result = LedgerEntry.objects.all()
+    context = {
+        'entries': result,
+    }
+    return render(request, 'ledger_app/backup/view_all_LedgerEntry_entries.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+import pandas as pd
+from django.shortcuts import render
+from django.utils import timezone
+
+def upload_ledger_excel(request):
+    rows = []
+
+    if request.method == "POST" and request.FILES.get('excel_file'):
+        excel_file = request.FILES['excel_file']
+        df = pd.read_excel(excel_file)
+
+        # 🔴 THIS LINE FIXES nan PROBLEM
+        df = df.where(pd.notnull(df), None)
+
+        for _, row in df.iterrows():
+            rows.append({
+                'timestamp': row.get('timestamp'),
+                'particular_credit': row.get('particular_credit'),
+                'credit_amount': row.get('credit_amount'),
+                'particular_debit': row.get('particular_debit'),
+                'debit_amount': row.get('debit_amount'),
+                'created_at': row.get('created_at'),
+                'updated_at': row.get('updated_at'),
+                'flag': row.get('flag') or 1,
+            })
+
+    return render(
+        request,
+        'ledger_app/backup/upload_ledger.html',
+        {'rows': rows}
+    )
+
+
+
+
+from django.shortcuts import redirect
+from django.utils.dateparse import parse_datetime
+from .models import LedgerEntry
+
+def safe_decimal(value):
+    if value in [None, '', 'nan', 'NaN']:
+        return None
+    return value
+
+def save_ledger_entries(request):
+    if request.method == "POST":
+
+        time_stamp = request.POST.getlist('timestamp[]')
+        pc = request.POST.getlist('particular_credit[]')
+        ca = request.POST.getlist('credit_amount[]')
+        pd_ = request.POST.getlist('particular_debit[]')
+        da = request.POST.getlist('debit_amount[]')
+        flags = request.POST.getlist('flag[]')
+
+        entries = []
+
+        for i in range(len(pc)):
+            if not pc[i] and not pd_[i]:
+                continue
+
+            entries.append(
+                LedgerEntry(
+                    timestamp=time_stamp[i],
+                    particular_credit=pc[i] or None,
+                    credit_amount=safe_decimal(ca[i]),
+                    particular_debit=pd_[i] or None,
+                    debit_amount=safe_decimal(da[i]),
+                    flag=flags[i] or 1
+                )
+            )
+
+        LedgerEntry.objects.bulk_create(entries)
+        return redirect('upload_ledger')
+

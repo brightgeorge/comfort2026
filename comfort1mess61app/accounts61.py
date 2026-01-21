@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.contrib import messages
 
 # Create your views here.
-from branch10app.models import table1,in_exp_items_daily,opening_balance,category,ledger,accounts_book,background_color,share_holders
+from comfort1mess61app.models import table1,in_exp_items_daily,opening_balance,category,ledger,accounts_book,background_color,share_holders
 from django.http import JsonResponse
 
 
@@ -18,7 +18,7 @@ from django.http import JsonResponse
 
 ##******************CATERGORY CREATER START HERE
 
-def view_all_category10(request):
+def view_all_category61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -40,10 +40,10 @@ def view_all_category10(request):
             'category' : category.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/category/view_all_category.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/category/view_all_category.html',context)
     return render(request, 'index.html')
 
-def create_new_category10(request):
+def create_new_category61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -65,10 +65,10 @@ def create_new_category10(request):
             'category' : category.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/category/create_new_category.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/category/create_new_category.html',context)
     return render(request, 'index.html')
 
-def regi_new_category10(request):
+def regi_new_category61(request):
     if 'username' in request.session:
         category_names = request.POST.get('category')
         ir = category.objects.all().filter(category_name=category_names,flag=1).exists()
@@ -95,7 +95,7 @@ def regi_new_category10(request):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'CATERGORY ALREADY EXISTS')
-            return render(request, 'branches/branch10/accounts/creater_master/items/view_all_items.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/items/view_all_items.html', context)
         else:
 
             ic = category()
@@ -126,11 +126,11 @@ def regi_new_category10(request):
 
             }
             messages.info(request, 'CATEGORY CREATED SUCCESSFULLY')
-            return render(request,'branches/branch10/accounts/creater_master/category/view_all_category.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/category/view_all_category.html',context)
         return render(request, 'index.html')
 
 
-def update_category10(request,id):
+def update_category61(request,id):
     if 'username' in request.session:
         if request.method == 'POST':
             category_names = request.POST.get('category')
@@ -157,7 +157,7 @@ def update_category10(request,id):
                     'category': category.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request,'CATEGORY ALREADY EXISTS')
-                return render(request, 'branches/branch10/accounts/creater_master/category/view_all_category.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/category/view_all_category.html', context)
             else:
                 ic = category.objects.get(id=id)
                 ic.category_name = category_names
@@ -187,7 +187,7 @@ def update_category10(request,id):
                     'category': category.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request, 'CATEGORY UPDATED SUCCESSFULLY')
-                return render(request, 'branches/branch10/accounts/creater_master/category/view_all_category.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/category/view_all_category.html', context)
 
 
         us = request.session['username']
@@ -212,11 +212,11 @@ def update_category10(request,id):
             'category': category.objects.all().filter(flag=1).order_by('-id'),
         }
 
-        return render(request,'branches/branch10/accounts/creater_master/category/update_category.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/category/update_category.html',context)
     return render(request, 'index.html')
 
 
-def delete_category10(request,id):
+def delete_category61(request,id):
     if 'username' in request.session:
         r=category.objects.all().filter(id=id,flag=1).exists()
         if r == True:
@@ -247,7 +247,7 @@ def delete_category10(request,id):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'CATEGORY Deleted Successfully')
-            return render(request, 'branches/branch10/accounts/creater_master/category/view_all_category.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/category/view_all_category.html', context)
         else:
 
             us = request.session['username']
@@ -270,12 +270,12 @@ def delete_category10(request,id):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'CATEGORY already  Deleted')
-            return render(request,'branches/branch10/accounts/creater_master/category/view_all_category.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/category/view_all_category.html',context)
         return render(request, 'index.html')
 
 
 
-def view_all_category_delete10(request):
+def view_all_category_delete61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -297,7 +297,7 @@ def view_all_category_delete10(request):
             'category' : category.objects.all().filter(flag=2).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/category/view_all_category_delete.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/category/view_all_category_delete.html',context)
     return render(request, 'index.html')
 
 ##*****************CATERY CREATER END HERE
@@ -305,7 +305,7 @@ def view_all_category_delete10(request):
 
 ##******************ITEM CREATER START HERE
 
-def view_all_items10(request):
+def view_all_items61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -327,10 +327,10 @@ def view_all_items10(request):
             'item' : table1.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/items/view_all_items.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/items/view_all_items.html',context)
     return render(request, 'index.html')
 
-def create_new_item10(request):
+def create_new_item61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -353,10 +353,10 @@ def create_new_item10(request):
             'category': category.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/items/create_new_item.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/items/create_new_item.html',context)
     return render(request, 'index.html')
 
-def regi_new_item10(request):
+def regi_new_item61(request):
     if 'username' in request.session:
         item_name = request.POST.get('name')
         item_category = request.POST.get('category')
@@ -384,7 +384,7 @@ def regi_new_item10(request):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request,'ITEM ALREADY EXISTS')
-            return render(request, 'branches/branch10/accounts/creater_master/items/view_all_items.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/items/view_all_items.html', context)
         else:
             ic = table1()
             ic.name = item_name
@@ -416,10 +416,10 @@ def regi_new_item10(request):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'ITEM CREATED SUCCESSFULLY !!!')
-            return render(request,'branches/branch10/accounts/creater_master/items/view_all_items.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/items/view_all_items.html',context)
         return render(request, 'index.html')
 
-def delete_item10(request,id):
+def delete_item61(request,id):
     if 'username' in request.session:
         r=table1.objects.all().filter(id=id).exists()
         if r == True:
@@ -450,7 +450,7 @@ def delete_item10(request,id):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'ITEM Deleted Successfully')
-            return render(request, 'branches/branch10/accounts/creater_master/items/view_all_items.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/items/view_all_items.html', context)
         else:
 
             us = request.session['username']
@@ -473,11 +473,11 @@ def delete_item10(request,id):
                 'category': category.objects.all().filter(flag=1).order_by('-id'),
             }
             messages.info(request, 'ITEM already  Deleted')
-            return render(request,'branches/branch10/accounts/creater_master/items/view_all_items.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/items/view_all_items.html',context)
         return render(request, 'index.html')
 
 
-def update_item10(request,id):
+def update_item61(request,id):
     if 'username' in request.session:
         if request.method == 'POST':
             item_name = request.POST.get('name')
@@ -506,7 +506,7 @@ def update_item10(request,id):
                     'category': category.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request,'ITEM ALREADY EXISTS')
-                return render(request, 'branches/branch10/accounts/creater_master/items/view_all_items.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/items/view_all_items.html', context)
             else:
                 ic = table1.objects.get(id=id)
                 ic.name = item_name
@@ -538,7 +538,7 @@ def update_item10(request,id):
                     'category': category.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request, 'ITEM UPDATED SUCCESSFULLY')
-                return render(request, 'branches/branch10/accounts/creater_master/items/view_all_items.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/items/view_all_items.html', context)
 
 
         us = request.session['username']
@@ -563,10 +563,10 @@ def update_item10(request,id):
             'category': category.objects.all().filter(flag=1).order_by('-id'),
         }
 
-        return render(request,'branches/branch10/accounts/creater_master/items/update_item.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/items/update_item.html',context)
     return render(request, 'index.html')
 
-def view_all_items_delete10(request):
+def view_all_items_delete61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -588,7 +588,7 @@ def view_all_items_delete10(request):
             'item' : table1.objects.all().filter(flag=2).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/items/view_all_items_delete.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/items/view_all_items_delete.html',context)
     return render(request, 'index.html')
 
 ##*****************ITEM CREATER END HERE
@@ -596,7 +596,7 @@ def view_all_items_delete10(request):
 
 ##******************LEDGER CREATER START HERE
 
-def view_all_ledger10(request):
+def view_all_ledger61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -618,10 +618,10 @@ def view_all_ledger10(request):
             'ledger' : ledger.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html',context)
     return render(request, 'index.html')
 
-def create_new_ledger10(request):
+def create_new_ledger61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -643,10 +643,10 @@ def create_new_ledger10(request):
             'ledger' : ledger.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/ledger/create_new_ledger.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/ledger/create_new_ledger.html',context)
     return render(request, 'index.html')
 
-def regi_new_ledger10(request):
+def regi_new_ledger61(request):
     if 'username' in request.session:
         ledger_name = request.POST.get('ledger_name')
         contact_person_name = request.POST.get('contact_person_name')
@@ -686,7 +686,7 @@ def regi_new_ledger10(request):
                 'msg': 'success'
             }
             messages.info(request, 'LEDGER CREATED SUCCESSFULLY')
-            return render(request,'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html',context)
         else:
 
             us = request.session['username']
@@ -708,11 +708,11 @@ def regi_new_ledger10(request):
                 'msg' : 'danger'
             }
             messages.info(request,'LEDGER ALREADY EXISTS')
-            return render(request, 'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html', context)
         return render(request, 'index.html')
 
 
-def delete_ledger10(request,id):
+def delete_ledger61(request,id):
     if 'username' in request.session:
         r=ledger.objects.all().filter(id=id).exists()
         if r == True:
@@ -742,7 +742,7 @@ def delete_ledger10(request,id):
                 'msg': 'success'
             }
             messages.info(request, 'LEDGER Deleted Successfully')
-            return render(request, 'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html', context)
         else:
 
             us = request.session['username']
@@ -764,11 +764,11 @@ def delete_ledger10(request,id):
                 'msg': 'warning'
             }
             messages.info(request, 'LEDGER already  Deleted')
-            return render(request,'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html',context)
         return render(request, 'index.html')
 
 
-def update_ledger10(request,id):
+def update_ledger61(request,id):
     if 'username' in request.session:
         if request.method == 'POST':
             ledger_name = request.POST.get('ledger_name')
@@ -799,7 +799,7 @@ def update_ledger10(request,id):
                     'ledger': ledger.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request,'CATEGORY ALREADY EXISTS')
-                return render(request, 'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html', context)
             else:
                 ic = ledger.objects.get(id=id)
                 ic.ledger_name = ledger_name
@@ -832,7 +832,7 @@ def update_ledger10(request,id):
                     'ledger': ledger.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request, 'CATEGORY UPDATED SUCCESSFULLY')
-                return render(request, 'branches/branch10/accounts/creater_master/ledger/view_all_ledger.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger.html', context)
 
 
         us = request.session['username']
@@ -857,10 +857,10 @@ def update_ledger10(request,id):
             'ledger': ledger.objects.all().filter(flag=1).order_by('-id'),
         }
 
-        return render(request,'branches/branch10/accounts/creater_master/ledger/update_ledger.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/ledger/update_ledger.html',context)
     return render(request, 'index.html')
 
-def view_all_ledger_delete10(request):
+def view_all_ledger_delete61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -882,7 +882,7 @@ def view_all_ledger_delete10(request):
             'ledger' : ledger.objects.all().filter(flag=2).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/ledger/view_all_ledger_delete.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/ledger/view_all_ledger_delete.html',context)
     return render(request, 'index.html')
 
 
@@ -891,7 +891,7 @@ def view_all_ledger_delete10(request):
 
 ##******************ACCOUNTS_BOfOK CREATER START HERE
 
-def view_all_accounts_book10(request):
+def view_all_accounts_book61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -913,10 +913,10 @@ def view_all_accounts_book10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
     return render(request, 'index.html')
 
-def create_new_accounts_book10(request):
+def create_new_accounts_book61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -938,10 +938,10 @@ def create_new_accounts_book10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=1).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/accounts_book/create_new_accounts_book.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/create_new_accounts_book.html',context)
     return render(request, 'index.html')
 
-def regi_new_accounts_book10(request):
+def regi_new_accounts_book61(request):
     if 'username' in request.session:
         accounts_book_name = request.POST.get('accounts_book_name')
 
@@ -968,7 +968,7 @@ def regi_new_accounts_book10(request):
                 'msg' : 'danger'
             }
             messages.info(request,'ACCOUNTS BOOK Already Exists')
-            return render(request, 'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         else:
             ic = accounts_book()
             ic.accounts_book_name = accounts_book_name
@@ -998,12 +998,12 @@ def regi_new_accounts_book10(request):
                 'msg': 'success'
             }
             messages.info(request, 'ACCOUNTS BOOK Created Successfully')
-            return render(request,'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         return render(request, 'index.html')
 
 
 
-def delete_accounts_book10(request,id):
+def delete_accounts_book61(request,id):
     if 'username' in request.session:
         r=accounts_book.objects.all().filter(id=id).exists()
         if r == True:
@@ -1033,7 +1033,7 @@ def delete_accounts_book10(request,id):
                 'msg': 'success'
             }
             messages.info(request, 'ACCOUNTS BOOK Deleted Successfully')
-            return render(request, 'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
+            return render(request, 'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
         else:
 
             us = request.session['username']
@@ -1055,11 +1055,11 @@ def delete_accounts_book10(request,id):
                 'msg': 'warning'
             }
             messages.info(request, 'ACCOUNTS BOOK already  Deleted')
-            return render(request,'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
+            return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html',context)
         return render(request, 'index.html')
 
 
-def update_accounts_book10(request,id):
+def update_accounts_book61(request,id):
     if 'username' in request.session:
         if request.method == 'POST':
             accounts_book_name = request.POST.get('accounts_book_name')
@@ -1086,7 +1086,7 @@ def update_accounts_book10(request,id):
                     'accounts_book': accounts_book.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request,'ACCOUNTS BOOK ALREADY EXISTS')
-                return render(request, 'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
             else:
                 ic = accounts_book.objects.get(id=id)
                 ic.accounts_book_name = accounts_book_name
@@ -1116,7 +1116,7 @@ def update_accounts_book10(request,id):
                     'accounts_book': accounts_book.objects.all().filter(flag=1).order_by('-id'),
                 }
                 messages.info(request, 'ACCOUNTS BOOK UPDATED SUCCESSFULLY')
-                return render(request, 'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
+                return render(request, 'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book.html', context)
 
 
         us = request.session['username']
@@ -1141,10 +1141,10 @@ def update_accounts_book10(request,id):
             'accounts_book': accounts_book.objects.all().filter(flag=1).order_by('-id'),
         }
 
-        return render(request,'branches/branch10/accounts/creater_master/accounts_book/update_accounts_book.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/update_accounts_book.html',context)
     return render(request, 'index.html')
 
-def view_all_accounts_book_delete10(request):
+def view_all_accounts_book_delete61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -1166,7 +1166,7 @@ def view_all_accounts_book_delete10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=2).order_by('-id'),
 
         }
-        return render(request,'branches/branch10/accounts/creater_master/accounts_book/view_all_accounts_book_delete.html',context)
+        return render(request,'branches/comfort1mess/accounts/creater_master/accounts_book/view_all_accounts_book_delete.html',context)
     return render(request, 'index.html')
 
 ##*****************ACCOUNTS_BOOK CREATER END HERE
@@ -1180,7 +1180,7 @@ def view_all_accounts_book_delete10(request):
 ###******INCOME EXPENSE ENTRY FORM MASTER START HERE
 ###################################################################################
 
-def get_countries10(request):
+def get_countries61(request):
     if 'username' in request.session:
 
         countries = []
@@ -1193,7 +1193,7 @@ def get_countries10(request):
     return render(request, 'index.html')
 
 
-def in_exp_items_entry10(request):
+def in_exp_items_entry61(request):
     if 'username' in request.session:
 
         a='Afghanistan'
@@ -1219,17 +1219,17 @@ def in_exp_items_entry10(request):
 
 
             "countries" : ["Afghanistan", "Albania", "a", 'aaaa', 'aa', "Algeria", "Andorra", "Angola", "Anguilla"],
-            'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+            'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
             'ledger' : ledger.objects.all().filter(flag=1),
             'accounts_book': accounts_book.objects.all().filter(flag=1),
         }
         print(context)
-        return render(request,'branches/branch10/accounts/journal/in_exp_items_entry.html',context)
+        return render(request,'branches/comfort1mess/accounts/journal/in_exp_items_entry.html',context)
     return render(request, 'index.html')
 
 
 
-def reg_in_exp_items_entry10(request):
+def reg_in_exp_items_entry61(request):
     if 'username' in request.session:
 
         particulars = request.POST.get('particular')
@@ -1289,14 +1289,14 @@ def reg_in_exp_items_entry10(request):
                 'th_us': a[0],
                 'name': us,
 
-                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                 'message_bg' : 'alert-danger',
 
                 'ledger': ledger.objects.all().filter(flag=1),
                 'accounts_book': accounts_book.objects.all().filter(flag=1),
             }
             messages.info(request, 'ITEM already exists')
-            return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+            return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
 
         else:
             dup = table1.objects.all().filter(name=particulars,flag=1).exists()
@@ -1317,14 +1317,14 @@ def reg_in_exp_items_entry10(request):
                     'th_us': a[0],
                     'name': us,
 
-                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                     'message_bg': 'alert-danger',
 
                     'ledger': ledger.objects.all().filter(flag=1),
                     'accounts_book': accounts_book.objects.all().filter(flag=1),
                 }
                 messages.info(request, 'ITEM NOT FOUND')
-                return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+                return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
 
             else:
                 cat = table1.objects.all().filter(flag=1)
@@ -1371,18 +1371,18 @@ def reg_in_exp_items_entry10(request):
                     'th_us': a[0],
                     'name': us,
 
-                    'items' : in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                    'items' : in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                     'message_bg': 'alert-success',
 
                     'ledger': ledger.objects.all().filter(flag=1),
                     'accounts_book': accounts_book.objects.all().filter(flag=1),
                 }
                 messages.info(request, 'ITEM Entered Successfully')
-                return render(request,'branches/branch10/accounts/journal/in_exp_items_entry.html',context)
-        return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+                return render(request,'branches/comfort1mess/accounts/journal/in_exp_items_entry.html',context)
+        return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
     return render(request, 'index.html')
 
-def delete_journal10(request,id):
+def delete_journal61(request,id):
     if 'username' in request.session:
 
         r=in_exp_items_daily.objects.all().filter(id=id,flag=1).exists()
@@ -1409,14 +1409,14 @@ def delete_journal10(request,id):
                 'th_us': a[0],
                 'name': us,
 
-                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                 'message_bg': 'alert-success',
 
                 'ledger': ledger.objects.all().filter(flag=1),
                 'accounts_book': accounts_book.objects.all().filter(flag=1),
             }
             messages.info(request, 'ITEM Deleted Successfully')
-            return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+            return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
         else:
 
             us = request.session['username']
@@ -1434,19 +1434,19 @@ def delete_journal10(request,id):
                 'th_us': a[0],
                 'name': us,
 
-                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                 'message_bg': 'alert-warning',
 
                 'ledger': ledger.objects.all().filter(flag=1),
                 'accounts_book': accounts_book.objects.all().filter(flag=1),
             }
             messages.info(request, 'ITEM already  Deleted')
-            return render(request,'branches/branch10/accounts/journal/in_exp_items_entry.html',context)
+            return render(request,'branches/comfort1mess/accounts/journal/in_exp_items_entry.html',context)
         return render(request, 'index.html')
 
 
 
-def update_in_exp_items_entry10(request,id):
+def update_in_exp_items_entry61(request,id):
     if 'username' in request.session:
 
         if request.method == 'POST':
@@ -1476,13 +1476,13 @@ def update_in_exp_items_entry10(request,id):
                     'th_us': a[0],
                     'name': us,
 
-                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                     'message_bg': 'alert-danger',
                     'ledger': ledger.objects.all().filter(flag=1),
                     'accounts_book': accounts_book.objects.all().filter(flag=1),
                 }
                 messages.info(request, 'ITEM NOT FOUND')
-                return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+                return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
             else:
 
                 dl = []
@@ -1558,13 +1558,13 @@ def update_in_exp_items_entry10(request,id):
                     'th_us': a[0],
                     'name': us,
 
-                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+                    'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
                     'message_bg': 'alert-info',
                     'ledger': ledger.objects.all().filter(flag=1),
                     'accounts_book': accounts_book.objects.all().filter(flag=1),
                 }
                 messages.info(request, 'ITEM Updated Successfully')
-                return render(request, 'branches/branch10/accounts/journal/in_exp_items_entry.html', context)
+                return render(request, 'branches/comfort1mess/accounts/journal/in_exp_items_entry.html', context)
 
 
         us = request.session['username']
@@ -1583,17 +1583,17 @@ def update_in_exp_items_entry10(request,id):
             'name': us,
 
 
-            'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:10],
+            'items': in_exp_items_daily.objects.all().filter(flag=1).order_by('-id')[:61],
             'message_bg': 'alert-success',
 
             'ledger': ledger.objects.all().filter(flag=1),
             'accounts_book': accounts_book.objects.all().filter(flag=1),
             'sd': in_exp_items_daily.objects.get(id=id)
         }
-        return render(request, 'branches/branch10/accounts/journal/update_in_exp_items_entry.html', context)
+        return render(request, 'branches/comfort1mess/accounts/journal/update_in_exp_items_entry.html', context)
     return render(request, 'index.html')
 
-def detailed_journal_report10(request):
+def detailed_journal_report61(request):
     if 'username' in request.session:
 
 
@@ -1619,10 +1619,10 @@ def detailed_journal_report10(request):
             'ledger': ledger.objects.all().filter(flag=1),
             'accounts_book': accounts_book.objects.all().filter(flag=1),
         }
-        return render(request, 'branches/branch10/accounts/journal/detailed_journal_report.html', context)
+        return render(request, 'branches/comfort1mess/accounts/journal/detailed_journal_report.html', context)
     return render(request, 'index.html')
 
-def journal_report_deleted10(request):
+def journal_report_deleted61(request):
     if 'username' in request.session:
 
 
@@ -1646,7 +1646,7 @@ def journal_report_deleted10(request):
             'message_bg': 'alert-danger',
 
         }
-        return render(request, 'branches/branch10/accounts/journal/journal_report_deleted.html', context)
+        return render(request, 'branches/comfort1mess/accounts/journal/journal_report_deleted.html', context)
     return render(request, 'index.html')
 
 
@@ -1662,7 +1662,7 @@ def journal_report_deleted10(request):
 ###************ CATEGORY WISE REPORT START HERE ***********
 
 
-def daily_category_wise10(request):
+def daily_category_wise61(request):
     if 'username' in request.session:
 
         item_catergory = request.POST.get('item_catergory')
@@ -1732,11 +1732,11 @@ def daily_category_wise10(request):
             'particular' : item_catergory,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/category/daily_category_wise.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/category/daily_category_wise.html',context)
     return render(request, 'index.html')
 
 
-def monthly_category_based_reports10(request):
+def monthly_category_based_reports61(request):
     if 'username' in request.session:
 
         item_catergory = request.POST.get('item_catergory')
@@ -1794,11 +1794,11 @@ def monthly_category_based_reports10(request):
             'category': category.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/category/monthly_category_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/category/monthly_category_based_reports.html',context)
     return render(request, 'index.html')
 
 
-def yearly_category_based_reports10(request):
+def yearly_category_based_reports61(request):
     if 'username' in request.session:
 
         item_catergory = request.POST.get('item_catergory')
@@ -1842,7 +1842,7 @@ def yearly_category_based_reports10(request):
             'd_bal': d_bal,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/category/yearly_category_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/category/yearly_category_based_reports.html',context)
     return render(request, 'index.html')
 
 
@@ -1851,7 +1851,7 @@ def yearly_category_based_reports10(request):
 ###*************DAILY DETAILED REPORTS  START HERE
 
 
-def daily_detailed10(request):
+def daily_detailed61(request):
     if 'username' in request.session:
 
         dates = request.POST.get('day')
@@ -1915,11 +1915,11 @@ def daily_detailed10(request):
             'd_bal' : d_bal,
             'dates' : r_dates,
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/detailed/daily_detailed.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/detailed/daily_detailed.html',context)
     return render(request, 'index.html')
 
 
-def monthly_detailed10(request):
+def monthly_detailed61(request):
     if 'username' in request.session:
 
         month = request.POST.get('month')
@@ -1960,11 +1960,11 @@ def monthly_detailed10(request):
             'd_bal' : d_bal,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/detailed/monthly_detailed.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/detailed/monthly_detailed.html',context)
     return render(request, 'index.html')
 
 
-def yearly_detailed10(request):
+def yearly_detailed61(request):
     if 'username' in request.session:
 
         a = in_exp_items_daily.objects.all().filter(flag=1).order_by('month')
@@ -2004,7 +2004,7 @@ def yearly_detailed10(request):
             'd_bal' : d_bal,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/detailed/yearly_detailed.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/detailed/yearly_detailed.html',context)
     return render(request, 'index.html')
 
 
@@ -2012,7 +2012,7 @@ def yearly_detailed10(request):
 
 ###*************ITEM BASED REPORTS  START HERE
 
-def item_based_reports10(request):
+def item_based_reports61(request):
     if 'username' in request.session:
 
         particular = request.POST.get('item')
@@ -2047,12 +2047,12 @@ def item_based_reports10(request):
             'item' : in_exp_items_daily.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/item/item_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/item/item_based_reports.html',context)
     return render(request, 'index.html')
 
 
 
-def daily_item_based_reports10(request):
+def daily_item_based_reports61(request):
     if 'username' in request.session:
 
         particular = request.POST.get('item')
@@ -2122,12 +2122,12 @@ def daily_item_based_reports10(request):
             'particular' : particular,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/item/daily_item_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/item/daily_item_based_reports.html',context)
     return render(request, 'index.html')
 
 
 
-def monthly_item_based_reports10(request):
+def monthly_item_based_reports61(request):
     if 'username' in request.session:
 
         particular = request.POST.get('item')
@@ -2176,7 +2176,7 @@ def monthly_item_based_reports10(request):
             'particular' : particular,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/item/monthly_item_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/item/monthly_item_based_reports.html',context)
     return render(request, 'index.html')
 
 
@@ -2185,7 +2185,7 @@ def monthly_item_based_reports10(request):
 ###*************LEDGER BASED REPORTS  START HERE
 
 
-def daily_ledger_based_reports10(request):
+def daily_ledger_based_reports61(request):
     if 'username' in request.session:
 
         dates = request.POST.get('day')
@@ -2252,11 +2252,11 @@ def daily_ledger_based_reports10(request):
             'ledger': ledger.objects.all().filter(flag=1),
             'lname': ledgers,
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/ledger/daily_ledger_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/ledger/daily_ledger_based_reports.html',context)
     return render(request, 'index.html')
 
 
-def ledger_based_reports10(request):
+def ledger_based_reports61(request):
     if 'username' in request.session:
 
         ledgers = request.POST.get('ledger')
@@ -2313,12 +2313,12 @@ def ledger_based_reports10(request):
             'ledger': ledger.objects.all(),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/ledger/ledger_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/ledger/ledger_based_reports.html',context)
     return render(request, 'index.html')
 
 
 
-def monthly_ledger_based_reports10(request):
+def monthly_ledger_based_reports61(request):
     if 'username' in request.session:
 
         ledgers = request.POST.get('ledger')
@@ -2376,7 +2376,7 @@ def monthly_ledger_based_reports10(request):
             'ledger': ledger.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/ledger/monthly_ledger_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/ledger/monthly_ledger_based_reports.html',context)
     return render(request, 'index.html')
 
 
@@ -2385,7 +2385,7 @@ def monthly_ledger_based_reports10(request):
 ###*************ACCOUNTS-BOOK BASED REPORTS  START HERE
 
 
-def accounts_book_based_reports10(request):
+def accounts_book_based_reports61(request):
     if 'username' in request.session:
 
         accounts_book_name = request.POST.get('accounts_book_name')
@@ -2420,12 +2420,12 @@ def accounts_book_based_reports10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/accounts_book/accounts_book_name_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/accounts_book/accounts_book_name_based_reports.html',context)
     return render(request, 'index.html')
 
 
 
-def daily_accounts_book_based_reports10(request):
+def daily_accounts_book_based_reports61(request):
     if 'username' in request.session:
 
         accounts_book_name = request.POST.get('accounts_book_name')
@@ -2494,12 +2494,12 @@ def daily_accounts_book_based_reports10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/accounts_book/daily_accounts_book_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/accounts_book/daily_accounts_book_based_reports.html',context)
     return render(request, 'index.html')
 
 
 
-def monthly_accounts_book_based_reports10(request):
+def monthly_accounts_book_based_reports61(request):
     if 'username' in request.session:
 
         accounts_book_name = request.POST.get('accounts_book_name')
@@ -2546,7 +2546,7 @@ def monthly_accounts_book_based_reports10(request):
             'accounts_book' : accounts_book.objects.all().filter(flag=1),
 
         }
-        return render(request,'branches/branch10/accounts/accounts_reports/accounts_book/monthly_accounts_book_based_reports.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_reports/accounts_book/monthly_accounts_book_based_reports.html',context)
     return render(request, 'index.html')
 
 
@@ -2559,7 +2559,7 @@ def monthly_accounts_book_based_reports10(request):
 ###******ALL REPORTS  END HERE
 ###################################################################################
 
-def monthly_reports_choose_months10(request):
+def monthly_reports_choose_months61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -2580,11 +2580,11 @@ def monthly_reports_choose_months10(request):
 
 
         }
-        return render(request,'branches/branch10/accounts/monthly_reports/monthly_reports_choose_months.html',context)
+        return render(request,'branches/comfort1mess/accounts/monthly_reports/monthly_reports_choose_months.html',context)
     return render(request, 'index.html')
 
 
-def monthly_detailed_daily_in_exp_items_report10(request,mo):
+def monthly_detailed_daily_in_exp_items_report61(request,mo):
     if 'username' in request.session:
 
         mth=mo
@@ -2724,17 +2724,17 @@ def monthly_detailed_daily_in_exp_items_report10(request,mo):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_balance_8 + r_income_9 - r_expense_9
 
-        income_10 = in_exp_items_daily.objects.filter(month=mth, type='income', day='10',flag=1)
-        l_income_10 = []
-        for i in income_10:
-            l_income_10.append(float(i.amount))
-        r_income_10 = sum(l_income_10)
-        expense_10 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='10',flag=1)
-        l_expense_10 = []
-        for i in expense_10:
-            l_expense_10.append(float(i.amount))
-        r_expense_10 = sum(l_expense_10)
-        r_balance_10 = r_balance_9 + r_income_10 - r_expense_10
+        income_61 = in_exp_items_daily.objects.filter(month=mth, type='income', day='61',flag=1)
+        l_income_61 = []
+        for i in income_61:
+            l_income_61.append(float(i.amount))
+        r_income_61 = sum(l_income_61)
+        expense_61 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='61',flag=1)
+        l_expense_61 = []
+        for i in expense_61:
+            l_expense_61.append(float(i.amount))
+        r_expense_61 = sum(l_expense_61)
+        r_balance_61 = r_balance_9 + r_income_61 - r_expense_61
 
         income_11 = in_exp_items_daily.objects.filter(month=mth, type='income', day='11',flag=1)
         l_income_11 = []
@@ -2746,7 +2746,7 @@ def monthly_detailed_daily_in_exp_items_report10(request,mo):
         for i in expense_11:
             l_expense_11.append(float(i.amount))
         r_expense_11 = sum(l_expense_11)
-        r_balance_11 = r_balance_10 + r_income_11 - r_expense_11
+        r_balance_11 = r_balance_61 + r_income_11 - r_expense_11
 
         income_12 = in_exp_items_daily.objects.filter(month=mth, type='income', day='12',flag=1)
         l_income_12 = []
@@ -3072,9 +3072,9 @@ def monthly_detailed_daily_in_exp_items_report10(request,mo):
             'expense_9': r_expense_9,
             'balance_9': r_balance_9,
 
-            'income_10': r_income_10,
-            'expense_10': r_expense_10,
-            'balance_10': r_balance_10,
+            'income_61': r_income_61,
+            'expense_61': r_expense_61,
+            'balance_61': r_balance_61,
 
             'income_11': r_income_11,
             'expense_11': r_expense_11,
@@ -3161,14 +3161,14 @@ def monthly_detailed_daily_in_exp_items_report10(request,mo):
             'balance_31': r_balance_31,
 
         }
-        return render(request,'branches/branch10/accounts/monthly_reports/monthly_detailed_daily_in_exp_items_report.html',context)
+        return render(request,'branches/comfort1mess/accounts/monthly_reports/monthly_detailed_daily_in_exp_items_report.html',context)
     return render(request, 'index.html')
 
 
 
 
 
-def single_monthly_reports_choose_months10(request):
+def single_monthly_reports_choose_months61(request):
     if 'username' in request.session:
 
         us = request.session['username']
@@ -3186,10 +3186,10 @@ def single_monthly_reports_choose_months10(request):
             'th_us': a[0],
             'name': us,
         }
-        return render(request,'branches/branch10/accounts/monthly_reports/single_monthly_reports_choose_months.html',context)
+        return render(request,'branches/comfort1mess/accounts/monthly_reports/single_monthly_reports_choose_months.html',context)
     return render(request, 'index.html')
 
-def single_monthly_daily_in_exp_items_report10(request,mo):
+def single_monthly_daily_in_exp_items_report61(request,mo):
     if 'username' in request.session:
 
         mth = mo
@@ -3328,17 +3328,17 @@ def single_monthly_daily_in_exp_items_report10(request,mo):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_balance_8 + r_income_9 - r_expense_9
 
-        income_10 = in_exp_items_daily.objects.filter(month=mth, type='income', day='10', flag=1)
-        l_income_10 = []
-        for i in income_10:
-            l_income_10.append(float(i.amount))
-        r_income_10 = sum(l_income_10)
-        expense_10 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='10', flag=1)
-        l_expense_10 = []
-        for i in expense_10:
-            l_expense_10.append(float(i.amount))
-        r_expense_10 = sum(l_expense_10)
-        r_balance_10 = r_balance_9 + r_income_10 - r_expense_10
+        income_61 = in_exp_items_daily.objects.filter(month=mth, type='income', day='61', flag=1)
+        l_income_61 = []
+        for i in income_61:
+            l_income_61.append(float(i.amount))
+        r_income_61 = sum(l_income_61)
+        expense_61 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='61', flag=1)
+        l_expense_61 = []
+        for i in expense_61:
+            l_expense_61.append(float(i.amount))
+        r_expense_61 = sum(l_expense_61)
+        r_balance_61 = r_balance_9 + r_income_61 - r_expense_61
 
         income_11 = in_exp_items_daily.objects.filter(month=mth, type='income', day='11', flag=1)
         l_income_11 = []
@@ -3350,7 +3350,7 @@ def single_monthly_daily_in_exp_items_report10(request,mo):
         for i in expense_11:
             l_expense_11.append(float(i.amount))
         r_expense_11 = sum(l_expense_11)
-        r_balance_11 = r_balance_10 + r_income_11 - r_expense_11
+        r_balance_11 = r_balance_61 + r_income_11 - r_expense_11
 
         income_12 = in_exp_items_daily.objects.filter(month=mth, type='income', day='12', flag=1)
         l_income_12 = []
@@ -3675,9 +3675,9 @@ def single_monthly_daily_in_exp_items_report10(request,mo):
             'expense_9': r_expense_9,
             'balance_9': r_balance_9,
 
-            'income_10': r_income_10,
-            'expense_10': r_expense_10,
-            'balance_10': r_balance_10,
+            'income_61': r_income_61,
+            'expense_61': r_expense_61,
+            'balance_61': r_balance_61,
 
             'income_11': r_income_11,
             'expense_11': r_expense_11,
@@ -3764,7 +3764,7 @@ def single_monthly_daily_in_exp_items_report10(request,mo):
             'balance_31': r_balance_31,
 
         }
-        return render(request,'branches/branch10/accounts/monthly_reports/single_monthly_daily_in_exp_items_report.html',context)
+        return render(request,'branches/comfort1mess/accounts/monthly_reports/single_monthly_daily_in_exp_items_report.html',context)
     return render(request, 'index.html')
 
 
@@ -3895,17 +3895,17 @@ def accounts_dash_board_ob_ch61(request):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_income_9 - r_expense_9
 
-        income_10 = in_exp_items_daily.objects.filter(month='10', type='income', flag=1)
-        l_income_10 = []
-        for i in income_10:
-            l_income_10.append(float(i.amount))
-        r_income_10 = sum(l_income_10)
-        expense_10 = in_exp_items_daily.objects.filter(month='10', type='expense', flag=1)
-        l_expense_10 = []
-        for i in expense_10:
-            l_expense_10.append(float(i.amount))
-        r_expense_10 = sum(l_expense_10)
-        r_balance_10 = r_income_10 - r_expense_10
+        income_61 = in_exp_items_daily.objects.filter(month='61', type='income', flag=1)
+        l_income_61 = []
+        for i in income_61:
+            l_income_61.append(float(i.amount))
+        r_income_61 = sum(l_income_61)
+        expense_61 = in_exp_items_daily.objects.filter(month='61', type='expense', flag=1)
+        l_expense_61 = []
+        for i in expense_61:
+            l_expense_61.append(float(i.amount))
+        r_expense_61 = sum(l_expense_61)
+        r_balance_61 = r_income_61 - r_expense_61
 
         income_11 = in_exp_items_daily.objects.filter(month='11', type='income', flag=1)
         l_income_11 = []
@@ -4006,9 +4006,9 @@ def accounts_dash_board_ob_ch61(request):
             'expense_9': r_expense_9,
             'balance_9': r_balance_9,
 
-            'income_10': r_income_10,
-            'expense_10': r_expense_10,
-            'balance_10': r_balance_10,
+            'income_61': r_income_61,
+            'expense_61': r_expense_61,
+            'balance_61': r_balance_61,
 
             'income_11': r_income_11,
             'expense_11': r_expense_11,
@@ -4019,7 +4019,7 @@ def accounts_dash_board_ob_ch61(request):
             'balance_12': r_balance_12,
 
         }
-        return render(request,'branches/branch10/accounts/accounts_dash_board.html',context)
+        return render(request,'branches/comfort1mess/accounts/accounts_dash_board.html',context)
     return render(request, 'index.html')
 
 
@@ -4037,7 +4037,7 @@ def accounts_dash_board_ob_ch61(request):
 #****** PROFIT SHARING STARTING HERE
 ###############################################################
 
-def profit_sharing_choose_months10(request):
+def profit_sharing_choose_months61(request):
     if 'username' in request.session:
         us = request.session['username']
         bgs = background_color.objects.all().filter(username=us)
@@ -4054,9 +4054,9 @@ def profit_sharing_choose_months10(request):
             'th_us': a[0],
             'name': us,
         }
-        return render(request,'branches/branch10/accounts/profit_sharing/profit_sharing_choose_months.html',context)
+        return render(request,'branches/comfort1mess/accounts/profit_sharing/profit_sharing_choose_months.html',context)
 
-def profit_sharing10(request,mo):
+def profit_sharing61(request,mo):
     if 'username' in request.session:
 
         opening_balance = 0
@@ -4169,17 +4169,17 @@ def profit_sharing10(request,mo):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_income_9 - r_expense_9
 
-        income_10 = in_exp_items_daily.objects.filter(month='10', type='income', flag=1)
-        l_income_10 = []
-        for i in income_10:
-            l_income_10.append(float(i.amount))
-        r_income_10 = sum(l_income_10)
-        expense_10 = in_exp_items_daily.objects.filter(month='10', type='expense', flag=1)
-        l_expense_10 = []
-        for i in expense_10:
-            l_expense_10.append(float(i.amount))
-        r_expense_10 = sum(l_expense_10)
-        r_balance_10 = r_income_10 - r_expense_10
+        income_61 = in_exp_items_daily.objects.filter(month='61', type='income', flag=1)
+        l_income_61 = []
+        for i in income_61:
+            l_income_61.append(float(i.amount))
+        r_income_61 = sum(l_income_61)
+        expense_61 = in_exp_items_daily.objects.filter(month='61', type='expense', flag=1)
+        l_expense_61 = []
+        for i in expense_61:
+            l_expense_61.append(float(i.amount))
+        r_expense_61 = sum(l_expense_61)
+        r_balance_61 = r_income_61 - r_expense_61
 
         income_11 = in_exp_items_daily.objects.filter(month='11', type='income', flag=1)
         l_income_11 = []
@@ -4231,7 +4231,7 @@ def profit_sharing10(request,mo):
         sha.append(r_balance_7)
         sha.append(r_balance_8)
         sha.append(r_balance_9)
-        sha.append(r_balance_10)
+        sha.append(r_balance_61)
         sha.append(r_balance_11)
         sha.append(r_balance_12)
 
@@ -4248,7 +4248,7 @@ def profit_sharing10(request,mo):
         amt=float(sha[mon]) - samt
         print('amt',amt)
         for i in sh:
-            ta = amt / 100 * float(i.share_holders_percentage)
+            ta = amt / 610 * float(i.share_holders_percentage)
             print('taa',ta)
             i.share_holders_amt = ta
             i.share_holders_amt_total =  ta + float(i.share_holders_rent)
@@ -4277,10 +4277,10 @@ def profit_sharing10(request,mo):
             'mo': mon[int(mo)],
 
         }
-        return render(request,'branches/branch10/accounts/profit_sharing/profit_sharing.html',context)
+        return render(request,'branches/comfort1mess/accounts/profit_sharing/profit_sharing.html',context)
     return render(request, 'index.html')
 
-def view_share_holders10(request):
+def view_share_holders61(request):
     if 'username' in request.session:
         us = request.session['username']
         bgs = background_color.objects.all().filter(username=us)
@@ -4299,9 +4299,9 @@ def view_share_holders10(request):
 
             'vsh' : share_holders.objects.all().filter(flag=1)
         }
-        return render(request, 'branches/branch10/accounts/profit_sharing/view_share_holders.html',context)
+        return render(request, 'branches/comfort1mess/accounts/profit_sharing/view_share_holders.html',context)
 
-def create_share_holders10(request):
+def create_share_holders61(request):
     if 'username' in request.session:
         us = request.session['username']
         bgs = background_color.objects.all().filter(username=us)
@@ -4319,10 +4319,10 @@ def create_share_holders10(request):
             'name': us,
         }
 
-        return render(request, 'branches/branch10/accounts/profit_sharing/create_share_holders.html',context)
+        return render(request, 'branches/comfort1mess/accounts/profit_sharing/create_share_holders.html',context)
 
 
-def regi_share_holders10(request):
+def regi_share_holders61(request):
     if 'username' in request.session:
         a=share_holders.objects.all().filter(flag=1)
         tsp=[]
@@ -4334,7 +4334,7 @@ def regi_share_holders10(request):
         tsa=sa+float(share)
         print('tsa', tsa)
 
-        if tsa <101:
+        if tsa <611:
 
             if request.method == 'POST':
                 name = request.POST.get('name')
@@ -4352,12 +4352,12 @@ def regi_share_holders10(request):
                 ic.flag = 1
                 ic.save()
 
-            return view_share_holders10(request)
-        me= 'SHARE HOLDER DOES NOT CREATED, BECAUSE SHARE % OUT OF 100!. NOW TOTAL % IS ' + str(tsa)
+            return view_share_holders61(request)
+        me= 'SHARE HOLDER DOES NOT CREATED, BECAUSE SHARE % OUT OF 610!. NOW TOTAL % IS ' + str(tsa)
         messages.info(request,me)
-        return view_share_holders10(request)
+        return view_share_holders61(request)
 
-def update_share_holders10(request,id):
+def update_share_holders61(request,id):
     if 'username' in request.session:
         if request.method == 'POST':
             name = request.POST.get('name')
@@ -4374,7 +4374,7 @@ def update_share_holders10(request,id):
             ic.ub_flag = 1
             ic.flag = 1
             ic.save()
-            return view_share_holders10(request)
+            return view_share_holders61(request)
 
         us = request.session['username']
         bgs = background_color.objects.all().filter(username=us)
@@ -4394,9 +4394,9 @@ def update_share_holders10(request,id):
             'sd' : share_holders.objects.get(id=id)
         }
 
-        return render(request, 'branches/branch10/accounts/profit_sharing/update_share_holders.html',context)
+        return render(request, 'branches/comfort1mess/accounts/profit_sharing/update_share_holders.html',context)
 
-def delete_share_holders10(request,id):
+def delete_share_holders61(request,id):
     if 'username' in request.session:
         #de=share_holders.objects.get(id=id)
         #de.delete()
@@ -4406,10 +4406,10 @@ def delete_share_holders10(request,id):
         d.db_date = datetime.datetime.now()
         d.flag = 2
         d.save()
-        return view_share_holders10(request)
+        return view_share_holders61(request)
 
 
-def view_deleted_share_holders10(request):
+def view_deleted_share_holders61(request):
     if 'username' in request.session:
         us = request.session['username']
         bgs = background_color.objects.all().filter(username=us)
@@ -4428,7 +4428,7 @@ def view_deleted_share_holders10(request):
 
             'vsh' : share_holders.objects.all().filter(flag=2)
         }
-        return render(request, 'branches/branch10/accounts/profit_sharing/view_deleted_share_holders.html',context)
+        return render(request, 'branches/comfort1mess/accounts/profit_sharing/view_deleted_share_holders.html',context)
 
 #*****************************************
 #****** PROFIT END STARTING HERE

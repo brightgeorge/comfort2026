@@ -14,5 +14,9 @@ urlpatterns = [
     path('credit_all_entry_history/',tally.credit_all_entry_history,name='credit_all_entry_history'),
     path('debit_all_entry_history/',tally.debit_all_entry_history,name='debit_all_entry_history'),
 
+    path('view_all_LedgerEntry_entries/',tally.view_all_LedgerEntry_entries,name='view_all_LedgerEntry_entries'),
+
+    path('upload-ledger/', tally.upload_ledger_excel, name='upload_ledger'),
+    path('save-ledger/', tally.save_ledger_entries, name='save_ledger'),
 
 ]

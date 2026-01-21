@@ -1,0 +1,51 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="excel_file" required>
+    <button type="submit">Upload & Preview</button>
+</form>
+
+{% if rows %}
+    <h3>Preview Ledger Entries</h3>
+
+    <form method="post" action="{% url 'save_ledger' %}">
+        {% csrf_token %}
+
+        <table border="1">
+            <tr>
+                <th>Timestamp</th>
+                <th>Particular Credit</th>
+                <th>Credit Amount</th>
+                <th>Particular Debit</th>
+                <th>Debit Amount</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Flag</th>
+            </tr>
+
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.timestamp }}</td>
+                <td>{{ row.particular_credit }}</td>
+                <td>{{ row.credit_amount }}</td>
+                <td>{{ row.particular_debit }}</td>
+                <td>{{ row.debit_amount }}</td>
+                <td>{{ row.created_at }}</td>
+                <td>{{ row.updated_at }}</td>
+                <td>{{ row.flag }}</td>
+            </tr>
+
+            <!-- Hidden inputs to send data for saving -->
+            <input type="hidden" name="timestamp[]" value="{{ row.timestamp }}">
+            <input type="hidden" name="particular_credit[]" value="{{ row.particular_credit }}">
+            <input type="hidden" name="credit_amount[]" value="{{ row.credit_amount }}">
+            <input type="hidden" name="particular_debit[]" value="{{ row.particular_debit }}">
+            <input type="hidden" name="debit_amount[]" value="{{ row.debit_amount }}">
+            <input type="hidden" name="created_at[]" value="{{ row.created_at }}">
+            <input type="hidden" name="updated_at[]" value="{{ row.updated_at }}">
+            <input type="hidden" name="flag[]" value="{{ row.flag }}">
+            {% endfor %}
+        </table>
+
+        <button type="submit">Confirm & Save</button>
+    </form>
+{% endif %}
