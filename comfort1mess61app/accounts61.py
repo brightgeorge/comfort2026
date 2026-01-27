@@ -2597,7 +2597,7 @@ def monthly_detailed_daily_in_exp_items_report61(request,mo):
         n_mth= int(mth)
         month_name_dis = mth_list[n_mth]
 
-        ye_list= ['*','2024','2024','2024','2024','2024','2024','2024','2024','2024','2024','2024','2024']
+        ye_list= ['*','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026']
         n_ye= int(mth)
         ye_name_dis = ye_list[n_ye]
 
@@ -2724,17 +2724,17 @@ def monthly_detailed_daily_in_exp_items_report61(request,mo):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_balance_8 + r_income_9 - r_expense_9
 
-        income_61 = in_exp_items_daily.objects.filter(month=mth, type='income', day='61',flag=1)
-        l_income_61 = []
-        for i in income_61:
-            l_income_61.append(float(i.amount))
-        r_income_61 = sum(l_income_61)
-        expense_61 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='61',flag=1)
-        l_expense_61 = []
-        for i in expense_61:
-            l_expense_61.append(float(i.amount))
-        r_expense_61 = sum(l_expense_61)
-        r_balance_61 = r_balance_9 + r_income_61 - r_expense_61
+        income_10 = in_exp_items_daily.objects.filter(month=mth, type='income', day='10',flag=1)
+        l_income_10 = []
+        for i in income_10:
+            l_income_10.append(float(i.amount))
+        r_income_10 = sum(l_income_10)
+        expense_10 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='10',flag=1)
+        l_expense_10 = []
+        for i in expense_10:
+            l_expense_10.append(float(i.amount))
+        r_expense_10 = sum(l_expense_10)
+        r_balance_10 = r_balance_9 + r_income_10 - r_expense_10
 
         income_11 = in_exp_items_daily.objects.filter(month=mth, type='income', day='11',flag=1)
         l_income_11 = []
@@ -2746,7 +2746,7 @@ def monthly_detailed_daily_in_exp_items_report61(request,mo):
         for i in expense_11:
             l_expense_11.append(float(i.amount))
         r_expense_11 = sum(l_expense_11)
-        r_balance_11 = r_balance_61 + r_income_11 - r_expense_11
+        r_balance_11 = r_balance_10 + r_income_11 - r_expense_11
 
         income_12 = in_exp_items_daily.objects.filter(month=mth, type='income', day='12',flag=1)
         l_income_12 = []
@@ -3072,9 +3072,9 @@ def monthly_detailed_daily_in_exp_items_report61(request,mo):
             'expense_9': r_expense_9,
             'balance_9': r_balance_9,
 
-            'income_61': r_income_61,
-            'expense_61': r_expense_61,
-            'balance_61': r_balance_61,
+            'income_10': r_income_10,
+            'expense_10': r_expense_10,
+            'balance_10': r_balance_10,
 
             'income_11': r_income_11,
             'expense_11': r_expense_11,
@@ -3202,7 +3202,7 @@ def single_monthly_daily_in_exp_items_report61(request,mo):
         n_mth = int(mth)
         month_name_dis = mth_list[n_mth]
 
-        ye_list = ['*', '2024', '2024', '2024', '2024', '2024', '2024', '2024', '2024', '2024', '2024', '2024', '2024']
+        ye_list = ['*','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026','2026']
         n_ye = int(mth)
         ye_name_dis = ye_list[n_ye]
 
@@ -3328,17 +3328,17 @@ def single_monthly_daily_in_exp_items_report61(request,mo):
         r_expense_9 = sum(l_expense_9)
         r_balance_9 = r_balance_8 + r_income_9 - r_expense_9
 
-        income_61 = in_exp_items_daily.objects.filter(month=mth, type='income', day='61', flag=1)
-        l_income_61 = []
-        for i in income_61:
-            l_income_61.append(float(i.amount))
-        r_income_61 = sum(l_income_61)
-        expense_61 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='61', flag=1)
-        l_expense_61 = []
-        for i in expense_61:
-            l_expense_61.append(float(i.amount))
-        r_expense_61 = sum(l_expense_61)
-        r_balance_61 = r_balance_9 + r_income_61 - r_expense_61
+        income_10 = in_exp_items_daily.objects.filter(month=mth, type='income', day='10', flag=1)
+        l_income_10 = []
+        for i in income_10:
+            l_income_10.append(float(i.amount))
+        r_income_10 = sum(l_income_10)
+        expense_10 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='10', flag=1)
+        l_expense_10 = []
+        for i in expense_10:
+            l_expense_10.append(float(i.amount))
+        r_expense_10 = sum(l_expense_10)
+        r_balance_10 = r_balance_9 + r_income_10 - r_expense_10
 
         income_11 = in_exp_items_daily.objects.filter(month=mth, type='income', day='11', flag=1)
         l_income_11 = []
@@ -3350,7 +3350,7 @@ def single_monthly_daily_in_exp_items_report61(request,mo):
         for i in expense_11:
             l_expense_11.append(float(i.amount))
         r_expense_11 = sum(l_expense_11)
-        r_balance_11 = r_balance_61 + r_income_11 - r_expense_11
+        r_balance_11 = r_balance_10 + r_income_11 - r_expense_11
 
         income_12 = in_exp_items_daily.objects.filter(month=mth, type='income', day='12', flag=1)
         l_income_12 = []
@@ -3675,9 +3675,9 @@ def single_monthly_daily_in_exp_items_report61(request,mo):
             'expense_9': r_expense_9,
             'balance_9': r_balance_9,
 
-            'income_61': r_income_61,
-            'expense_61': r_expense_61,
-            'balance_61': r_balance_61,
+            'income_10': r_income_10,
+            'expense_10': r_expense_10,
+            'balance_10': r_balance_10,
 
             'income_11': r_income_11,
             'expense_11': r_expense_11,
