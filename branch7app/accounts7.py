@@ -4930,30 +4930,12 @@ def regi_multiple_share_holders7(request):
             if request.method == 'POST':
                 name = [
                     'SHAKEEL',
-                    'SHAMEEL',
-                    'MOIDEEN',
-                    'SHAFI',
-                    'SHINAD',
-                    'NIJAS',
                     'MOOSA',
-                    'HASHIM',
-                    'ANEEZ',
-                    'ASEEB',
-                    'ZAHEER',
 
                 ]
                 share = [
-                    '16',
-                    '16',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '4',
+                    '50',
+                    '50',
 
                 ]
 

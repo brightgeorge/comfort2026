@@ -4942,6 +4942,7 @@ def regi_multiple_share_holders22(request):
 
                 ]
                 share = [
+
                     '20',
                     '20',
                     '20',

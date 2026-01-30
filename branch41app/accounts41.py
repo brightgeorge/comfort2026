@@ -4946,31 +4946,37 @@ def regi_multiple_share_holders41(request):
         if tsa <101:
             if request.method == 'POST':
                 name = [
+                    'SHAKEEL K',
+                    'SHAJEER',
+                    'SHAHINSHA',
                     'SHAKEEL',
                     'SHAMEEL',
-                    'MOIDEEN',
-                    'SHAFI',
-                    'SHINAD',
+                    'RAYEES',
+                    'RAFEEQUE',
+                    'MUSTHAFA',
                     'NIJAS',
-                    'MOOSA',
+                    'RANEES',
                     'HASHIM',
+                    'HASSAN',
                     'ANEEZ',
                     'ASEEB',
-                    'ZAHEER',
 
                 ]
                 share = [
-                    '16',
-                    '16',
+                    '10',
+                    '10',
+                    '10',
+                    '10',
+                    '10',
+                    '10',
                     '8',
                     '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
-                    '8',
+                    '6',
+                    '0',
                     '4',
+                    '4',
+                    '5',
+                    '5',
 
                 ]
 

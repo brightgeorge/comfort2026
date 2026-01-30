@@ -4957,14 +4957,12 @@ def regi_multiple_share_holders21(request):
                     'MOOSA',
                     'SALAM',
                     'SHAKEEL',
-                    'SHAMEEL',
 
                 ]
                 share = [
                     '25',
                     '50',
-                    '12.5',
-                    '12.5',
+                    '25',
 
                 ]
 

@@ -4935,9 +4935,9 @@ def regi_multiple_share_holders6(request):
             if request.method == 'POST':
                 name = [
                     'SHAMEEL',
-                    'SHAKEEL',
                     'ANEEZ',
                     'ASEEB',
+                    'SHAKEEL',
                     'ZAHEER',
                     'ZIYAD',
                     'RAYEES',
@@ -4957,17 +4957,19 @@ def regi_multiple_share_holders6(request):
                     'HANEEFA',
                     'JAMSHI',
                     'JASEER',
-                    'SHAFEEQ',
+                    'SHEFEEQUE',
                     'NISHAD',
                     'NASEEB',
                     'BAPPY',
+                    'RAMLATH',
+
 
                 ]
                 share = [
                     '13.75',
-                    '8.75',
                     '10',
                     '10',
+                    '6.25',
                     '2.5',
                     '2.5',
                     '2.5',
@@ -4991,6 +4993,8 @@ def regi_multiple_share_holders6(request):
                     '2.5',
                     '2.5',
                     '2.5',
+                    '2.5',
+
 
                 ]
 
