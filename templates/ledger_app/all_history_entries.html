@@ -210,10 +210,11 @@
                   </tr>
                    <tr style="background-color:#7c3aed">
 						<th>Sl No</th>
-                     <th>Date</th>
-                       <th>Time</th>
-                     <th>Particulars</th>
-                     <th>Amount</th>
+                     <th>Timestamp</th>
+                     <th>Credit Particular</th>
+                     <th>Credit Amount</th>
+                       <th>Debit Particular</th>
+                     <th>Debit Amount</th>
 
                    </tr>
                    </thead>
@@ -224,7 +225,9 @@
 
                     <td>{{forloop.counter}}</td>
                      <td>{{ i.created_at|date:"d/m/Y" }}</td>
-                        <td>{{ i.created_at|date:"H:i:s" }}</td>
+
+                       <td>{{i.particular_credit}}</td>
+                    <td>{{i.credit_amount}}</td>
 
 				   <td>{{i.particular_debit}}</td>
                     <td>{{i.debit_amount}}</td>

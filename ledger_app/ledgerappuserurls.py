@@ -13,6 +13,12 @@ urlpatterns = [
 
     path('credit_all_entry_history/',tally.credit_all_entry_history,name='credit_all_entry_history'),
     path('debit_all_entry_history/',tally.debit_all_entry_history,name='debit_all_entry_history'),
+    path('all_history_entries/',tally.all_history_entries,name='all_history_entries'),
+
+    path('individual_itembased_credit_entry_history/<entry_id>',tally.individual_itembased_credit_entry_history,name='individual_itembased_credit_entry_history'),
+    path('individual_itembased_debit_entry_history/<entry_id>',tally.individual_itembased_debit_entry_history,name='individual_itembased_debit_entry_history'),
+
+
 
     path('view_all_LedgerEntry_entries/',tally.view_all_LedgerEntry_entries,name='view_all_LedgerEntry_entries'),
 

@@ -10,42 +10,41 @@
     <form method="post" action="{% url 'save_ledger' %}">
         {% csrf_token %}
 
-        <table border="1">
-            <tr>
-                <th>Timestamp</th>
-                <th>Particular Credit</th>
-                <th>Credit Amount</th>
-                <th>Particular Debit</th>
-                <th>Debit Amount</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Flag</th>
-            </tr>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Credit Particular</th>
+                    <th>Credit Amount</th>
+                    <th>Debit Particular</th>
+                    <th>Debit Amount</th>
+                    <th>entry_id</th>
+                </tr>
+            </thead>
 
-            {% for row in rows %}
-            <tr>
-                <td>{{ row.timestamp }}</td>
-                <td>{{ row.particular_credit }}</td>
-                <td>{{ row.credit_amount }}</td>
-                <td>{{ row.particular_debit }}</td>
-                <td>{{ row.debit_amount }}</td>
-                <td>{{ row.created_at }}</td>
-                <td>{{ row.updated_at }}</td>
-                <td>{{ row.flag }}</td>
-            </tr>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row.timestamp }}</td>
+                    <td>{{ row.credit_particular }}</td>
+                    <td>{{ row.credit_amount }}</td>
+                    <td>{{ row.debit_particular }}</td>
+                    <td>{{ row.debit_amount }}</td>
+                    <td>{{ row.entry_id }}</td>
+                </tr>
 
-            <!-- Hidden inputs to send data for saving -->
-            <input type="hidden" name="timestamp[]" value="{{ row.timestamp }}">
-            <input type="hidden" name="particular_credit[]" value="{{ row.particular_credit }}">
-            <input type="hidden" name="credit_amount[]" value="{{ row.credit_amount }}">
-            <input type="hidden" name="particular_debit[]" value="{{ row.particular_debit }}">
-            <input type="hidden" name="debit_amount[]" value="{{ row.debit_amount }}">
-            <input type="hidden" name="created_at[]" value="{{ row.created_at }}">
-            <input type="hidden" name="updated_at[]" value="{{ row.updated_at }}">
-            <input type="hidden" name="flag[]" value="{{ row.flag }}">
-            {% endfor %}
+                <!-- Hidden inputs -->
+                <input type="hidden" name="timestamp[]" value="{{ row.timestamp }}">
+                <input type="hidden" name="credit_particular[]" value="{{ row.credit_particular }}">
+                <input type="hidden" name="credit_amount[]" value="{{ row.credit_amount }}">
+                <input type="hidden" name="debit_particular[]" value="{{ row.debit_particular }}">
+                <input type="hidden" name="debit_amount[]" value="{{ row.debit_amount }}">
+                <input type="hidden" name="entry_id[]" value="{{ row.entry_id }}">
+                {% endfor %}
+            </tbody>
         </table>
 
+        <br>
         <button type="submit">Confirm & Save</button>
     </form>
 {% endif %}
