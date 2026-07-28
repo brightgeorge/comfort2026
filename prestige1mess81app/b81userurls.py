@@ -493,11 +493,158 @@ urlpatterns = [
 
 
 
+
 #####********************************************************************************************************
 #ACCOUNTS START HERE
 ####***************************************************
 
     path('accounts_dash_board_ob_ch81/',accounts81.accounts_dash_board_ob_ch81,name='accounts_dash_board_ob_ch81'),
+
+
+
+#########################################################
+###******CREATER MASTER START HERE
+###################################################################################
+
+
+##******************CATERGORY CREATER START HERE
+
+    path('view_all_category81/', accounts81.view_all_category81, name='view_all_category81'),
+    path('create_new_category81/', accounts81.create_new_category81, name='create_new_category81'),
+    path('regi_new_category81/', accounts81.regi_new_category81, name='regi_new_category81'),
+    path('update_category81/<id>',accounts81.update_category81,name='update_category81'),
+
+    path('delete_category81/<id>', accounts81.delete_category81, name='delete_category81'),
+    path('view_all_category_delete81/', accounts81.view_all_category_delete81, name='view_all_category_delete81'),
+
+    ##*****************CATERY CREATER END HERE
+
+
+##******************ITEM CREATER START HERE
+
+    path('view_all_items81/', accounts81.view_all_items81, name='view_all_items81'),
+    path('create_new_item81/', accounts81.create_new_item81, name='create_new_item81'),
+    path('regi_new_item81/', accounts81.regi_new_item81, name='regi_new_item81'),
+    path('delete_item81/<id>',accounts81.delete_item81,name='delete_item81'),
+    path('update_item81/<id>', accounts81.update_item81, name='update_item81'),
+    path('view_all_items_delete81/',accounts81.view_all_items_delete81,name='view_all_items_delete81'),
+
+    ##*****************ITEM CREATER END HERE
+
+
+##******************LEDGER CREATER START HERE
+
+    path('view_all_ledger81/', accounts81.view_all_ledger81, name='view_all_ledger81'),
+    path('create_new_ledger81/', accounts81.create_new_ledger81, name='create_new_ledger81'),
+    path('regi_new_ledger81/', accounts81.regi_new_ledger81, name='regi_new_ledger81'),
+    path('delete_ledger81/<id>',accounts81.delete_ledger81,name='delete_ledger81'),
+    path('update_ledger81/<id>',accounts81.update_ledger81,name='update_ledger81'),
+    path('view_all_ledger_delete81/',accounts81.view_all_ledger_delete81,name='view_all_ledger_delete81'),
+
+##*****************LEDGER CREATER END HERE
+
+
+##******************ACCOUNTS_BOOK CREATER START HERE
+
+    path('view_all_accounts_book81/', accounts81.view_all_accounts_book81, name='view_all_accounts_book81'),
+    path('create_new_accounts_book81/', accounts81.create_new_accounts_book81, name='create_new_accounts_book81'),
+    path('regi_new_accounts_book81/', accounts81.regi_new_accounts_book81, name='regi_new_accounts_book81'),
+    path('update_accounts_book81/<id>',accounts81.update_accounts_book81,name='update_accounts_book81'),
+    path('delete_accounts_book81/<id>',accounts81.delete_accounts_book81,name='delete_accounts_book81'),
+    path('view_all_accounts_book_delete81/',accounts81.view_all_accounts_book_delete81,name='view_all_accounts_book_delete81'),
+
+##*****************ACCOUNTS_BOOK CREATER END HERE
+
+
+#########################################################
+###******CREATER MASTER END HERE
+###################################################################################
+
+#########################################################
+###******INCOME EXPENSE ENTRY FORM MASTER START HERE
+###################################################################################
+
+    path('get_countries81/', accounts81.get_countries81, name='get_countries81'),
+
+    path('in_exp_items_entry81/', accounts81.in_exp_items_entry81, name='in_exp_items_entry81'),
+    path('reg_in_exp_items_entry81/', accounts81.reg_in_exp_items_entry81, name='reg_in_exp_items_entry81'),
+    path('delete_journal81/<id>',accounts81.delete_journal81,name='delete_journal81'),
+    path('update_in_exp_items_entry81/<id>',accounts81.update_in_exp_items_entry81,name='update_in_exp_items_entry81'),
+    path('detailed_journal_report81/',accounts81.detailed_journal_report81,name='detailed_journal_report81'),
+    path('journal_report_deleted81/',accounts81.journal_report_deleted81,name='journal_report_deleted81'),
+
+#########################################################
+###******INCOME EXPENSE ENTRY FORM MASTER END HERE
+###################################################################################
+#########*******************************************************************************************************************
+#########################################################
+###******ALL REPORTS  START HERE
+###################################################################################
+
+
+###************* CATEGORY WISE REPORTS  START HERE
+
+    path('daily_category_wise81/', accounts81.daily_category_wise81, name='daily_category_wise81'),
+    path('monthly_category_based_reports81/',accounts81.monthly_category_based_reports81,name='monthly_category_based_reports81'),
+    path('yearly_category_based_reports81/', accounts81.yearly_category_based_reports81,name='yearly_category_based_reports81'),
+
+
+###*************CATEGORY WISE REPORTS  END HERE
+
+###*************DAILY DETAILED REPORTS  START HERE
+
+    path('daily_detailed81/', accounts81.daily_detailed81, name='daily_detailed81'),
+    path('monthly_detailed81/',accounts81.monthly_detailed81,name='monthly_detailed81'),
+    path('yearly_detailed81/',accounts81.yearly_detailed81,name='yearly_detailed81'),
+
+###*************DAILY DETAILED REPORTS  START HERE
+
+###*************ITEM BASED REPORTS  START HERE
+
+    path('item_based_reports81/', accounts81.item_based_reports81, name='item_based_reports81'),
+    path('daily_item_based_reports81/',accounts81.daily_item_based_reports81,name='daily_item_based_reports81'),
+    path('monthly_item_based_reports81/',accounts81.monthly_item_based_reports81,name='monthly_item_based_reports81'),
+
+###*************ITEM BASED REPORTS  START HERE
+
+###*************LEDGER BASED REPORTS  START HERE
+
+    path('ledger_based_reports81/', accounts81.ledger_based_reports81, name='ledger_based_reports81'),
+    path('monthly_ledger_based_reports81/', accounts81.monthly_ledger_based_reports81, name='monthly_ledger_based_reports81'),
+    path('daily_ledger_based_reports81/',accounts81.daily_ledger_based_reports81,name='daily_ledger_based_reports81'),
+
+###*************LEDGER BASED REPORTS  START HERE
+
+###*************ACCOUNTS-BOOK BASED REPORTS  START HERE
+
+    path('accounts_book_based_reports81/', accounts81.accounts_book_based_reports81, name='accounts_book_based_reports81'),
+    path('daily_accounts_book_based_reports81/',accounts81.daily_accounts_book_based_reports81,name='daily_accounts_book_based_reports81'),
+    path('monthly_accounts_book_based_reports81/',accounts81.monthly_accounts_book_based_reports81,name='monthly_accounts_book_based_reports81'),
+
+###*************ACCOUNTS-BOOK BASED REPORTS  END HERE
+
+
+
+#########################################################
+###******ALL REPORTS  END HERE
+###################################################################################
+
+    path('monthly_reports_choose_months81/', accounts81.monthly_reports_choose_months81, name='monthly_reports_choose_months81'),
+    path('monthly_detailed_daily_in_exp_items_report81/<mo>',accounts81.monthly_detailed_daily_in_exp_items_report81,name='monthly_detailed_daily_in_exp_items_report81'),
+
+    path('single_monthly_reports_choose_months81/', accounts81.single_monthly_reports_choose_months81,name='single_monthly_reports_choose_months81'),
+    path('single_monthly_daily_in_exp_items_report81/<mo>',accounts81.single_monthly_daily_in_exp_items_report81,name='single_monthly_daily_in_exp_items_report81'),
+
+
+    path('profit_sharing_choose_months81', accounts81.profit_sharing_choose_months81,name='profit_sharing_choose_months81'),
+    path('profit_sharing81/<mo>', accounts81.profit_sharing81, name='profit_sharing81'),
+    path('view_share_holders81', accounts81.view_share_holders81, name='view_share_holders81'),
+    path('create_share_holders81', accounts81.create_share_holders81, name='create_share_holders81'),
+    path('regi_share_holders81', accounts81.regi_share_holders81, name='regi_share_holders81'),
+    path('update_share_holders81/<id>', accounts81.update_share_holders81, name='update_share_holders81'),
+    path('delete_share_holders81/<id>', accounts81.delete_share_holders81, name='delete_share_holders81'),
+    path('view_deleted_share_holders81', accounts81.view_deleted_share_holders81, name='view_deleted_share_holders81'),
+
 
 
 
