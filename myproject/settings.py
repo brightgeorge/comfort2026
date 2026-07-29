@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'branch22app',
     'branch23app',
     'branch24app',
+    'branch25app',
 
     'branch31app',
     'branch32app',

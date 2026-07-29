@@ -327,6 +327,27 @@ def login_request(request):
                 }
                 return render(request, 'branches/branch24/branch1index.html', context)
 
+            if role == 'Branch25':
+                request.session['username'] = username
+                us = request.session['username']
+                import branch25app
+                bgs = branch25app.models.background_color.objects.all().filter(username=us)
+                bg = branch25app.models.background_color.objects.all().filter(username=us).exists()
+                a = []
+                if bg == True:
+                    a.append(us)
+                else:
+                    a.append('f')
+
+                context = {
+                    'bg': bgs,
+                    'us': us,
+                    'th_us': a[0],
+                    'user': loginobj,
+                    'name': us
+                }
+                return render(request, 'branches/branch25/branch1index.html', context)
+
             if role == 'Branch31':
                 request.session['username'] = username
                 us = request.session['username']
