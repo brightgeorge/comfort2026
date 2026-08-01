@@ -46,6 +46,7 @@ import branch42app.b42userurls
 import branch51app.b51userurls
 import branch52app.b52userurls
 import branch53app.b53userurls
+import branch54app.b54userurls
 
 import comfort1mess61app.b61userurls
 
@@ -85,6 +86,7 @@ urlpatterns = [
     path('br51/', include(branch51app.b51userurls)),
     path('br52/', include(branch52app.b52userurls)),
     path('br53/', include(branch53app.b53userurls)),
+    path('br54/', include(branch54app.b54userurls)),
 
     path('br61/', include(comfort1mess61app.b61userurls)),
 
