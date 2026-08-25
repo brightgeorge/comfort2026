@@ -3215,29 +3215,29 @@ def monthly_detailed_daily_in_exp_items_report25(request,mo):
         r_expense_23 = sum(l_expense_23)
         r_balance_23 = r_balance_22 + r_income_23 - r_expense_23
 
-        income_25 = in_exp_items_daily.objects.filter(month=mth, type='income', day='25',flag=1)
-        l_income_25 = []
-        for i in income_25:
-            l_income_25.append(float(i.amount))
-        r_income_25 = sum(l_income_25)
-        expense_25 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='25',flag=1)
-        l_expense_25 = []
-        for i in expense_25:
-            l_expense_25.append(float(i.amount))
-        r_expense_25 = sum(l_expense_25)
-        r_balance_25 = r_balance_23 + r_income_25 - r_expense_25
+        income_24 = in_exp_items_daily.objects.filter(month=mth, type='income', day='24', flag=1)
+        l_income_24 = []
+        for i in income_24:
+            l_income_24.append(float(i.amount))
+        r_income_24 = sum(l_income_24)
+        expense_24 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='24', flag=1)
+        l_expense_24 = []
+        for i in expense_24:
+            l_expense_24.append(float(i.amount))
+        r_expense_24 = sum(l_expense_24)
+        r_balance_24 = r_balance_23 + r_income_24 - r_expense_24
 
-        income_25 = in_exp_items_daily.objects.filter(month=mth, type='income', day='25',flag=1)
+        income_25 = in_exp_items_daily.objects.filter(month=mth, type='income', day='25', flag=1)
         l_income_25 = []
         for i in income_25:
             l_income_25.append(float(i.amount))
         r_income_25 = sum(l_income_25)
-        expense_25 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='25',flag=1)
+        expense_25 = in_exp_items_daily.objects.filter(month=mth, type='expense', day='25', flag=1)
         l_expense_25 = []
         for i in expense_25:
             l_expense_25.append(float(i.amount))
         r_expense_25 = sum(l_expense_25)
-        r_balance_25 = r_balance_25 + r_income_25 - r_expense_25
+        r_balance_25 = r_balance_24 + r_income_25 - r_expense_25
 
         income_26 = in_exp_items_daily.objects.filter(month=mth, type='income', day='26',flag=1)
         l_income_26 = []
@@ -3451,9 +3451,9 @@ def monthly_detailed_daily_in_exp_items_report25(request,mo):
             'expense_23': r_expense_23,
             'balance_23': r_balance_23,
 
-            'income_25': r_income_25,
-            'expense_25': r_expense_25,
-            'balance_25': r_balance_25,
+            'income_24': r_income_24,
+            'expense_24': r_expense_24,
+            'balance_24': r_balance_24,
 
             'income_25': r_income_25,
             'expense_25': r_expense_25,

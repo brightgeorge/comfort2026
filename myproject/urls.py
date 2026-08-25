@@ -34,6 +34,7 @@ import branch22app.b22userurls
 import branch23app.b23userurls
 import branch24app.b24userurls
 import branch25app.b25userurls
+import branch26app.b26userurls
 
 import branch31app.b31userurls
 import branch32app.b32userurls
@@ -74,6 +75,7 @@ urlpatterns = [
     path('br23/', include(branch23app.b23userurls)),
     path('br24/', include(branch24app.b24userurls)),
     path('br25/', include(branch25app.b25userurls)),
+    path('br26/', include(branch26app.b26userurls)),
 
     path('br31/', include(branch31app.b31userurls)),
     path('br32/', include(branch32app.b32userurls)),
