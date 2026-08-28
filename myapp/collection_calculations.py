@@ -14,6 +14,8 @@ import branch21app
 import branch22app
 import branch23app
 import branch24app
+import branch25app
+import branch26app
 
 import branch31app
 import branch32app
@@ -43,7 +45,9 @@ def total_collection_details(request):
     prestige1_total_collection = branch21app.admin_dashboard_calculations_br21.grand_total_collection()
     prestige2_total_collection = branch22app.admin_dashboard_calculations_br22.grand_total_collection()
     prestige3_total_collection = branch23app.admin_dashboard_calculations_br23.grand_total_collection()
+    prestige3sub_total_collection = branch25app.admin_dashboard_calculations_br25.grand_total_collection()
     prestige4_total_collection = branch24app.admin_dashboard_calculations_br24.grand_total_collection()
+    prestige5_total_collection = branch26app.admin_dashboard_calculations_br26.grand_total_collection()
 
     perfect1_total_collection = branch31app.admin_dashboard_calculations_br31.grand_total_collection()
     perfect2_total_collection = branch32app.admin_dashboard_calculations_br32.grand_total_collection()
@@ -55,7 +59,7 @@ def total_collection_details(request):
 
     comfort_ladies1_total_collection = branch51app.admin_dashboard_calculations_br51.grand_total_collection()
     comfort_ladies2_total_collection = branch52app.admin_dashboard_calculations_br52.grand_total_collection()
-    comfort_ladies3_total_collection = branch53app.admin_dashboard_calculations_br53.grand_total_collection()
+    #comfort_ladies3_total_collection = branch53app.admin_dashboard_calculations_br53.grand_total_collection()
 
     from datetime import datetime
     cmm = datetime.now().month
@@ -65,7 +69,7 @@ def total_collection_details(request):
     comfort_total_collection.append(comfort2_total_collection[cm])
     comfort_total_collection.append(comfort3_total_collection[cm])
     comfort_total_collection.append(comfort4_total_collection[cm])
-    comfort_total_collection.append((comfort4sub_total_collection))
+    comfort_total_collection.append(comfort4sub_total_collection[cm])
     comfort_total_collection.append(comfort5_total_collection[cm])
     comfort_total_collection.append(comfort6_total_collection[cm])
     comfort_total_collection.append(comfort7_total_collection[cm])
@@ -74,7 +78,9 @@ def total_collection_details(request):
     prestige_total_collection.append(prestige1_total_collection[cm])
     prestige_total_collection.append(prestige2_total_collection[cm])
     prestige_total_collection.append(prestige3_total_collection[cm])
+    prestige_total_collection.append(prestige3sub_total_collection[cm])
     prestige_total_collection.append(prestige4_total_collection[cm])
+    prestige_total_collection.append(prestige5_total_collection[cm])
 
     perfect_total_collection = []
     perfect_total_collection.append(perfect1_total_collection[cm])
@@ -89,7 +95,7 @@ def total_collection_details(request):
     comfort_ladies_total_collection = []
     comfort_ladies_total_collection.append(comfort_ladies1_total_collection[cm])
     comfort_ladies_total_collection.append(comfort_ladies2_total_collection[cm])
-    comfort_ladies_total_collection.append(comfort_ladies3_total_collection[cm])
+    #comfort_ladies_total_collection.append(comfort_ladies3_total_collection[cm])
 
     comfort_total_collections = sum(comfort_total_collection)
     prestige_total_collections = sum(prestige_total_collection)
@@ -98,7 +104,6 @@ def total_collection_details(request):
     comfort_ladies_total_collections = sum(comfort_ladies_total_collection)
 
     total_collection = comfort_total_collections + prestige_total_collections + perfect_total_collections + happy_homes_total_collections + comfort_ladies_total_collections
-    print('this is total branch total_collection sum',total_collection)
 
     ###ADVANCE CALCULATIONS START HERE ##########
 
@@ -114,7 +119,9 @@ def total_collection_details(request):
     prestige_advance1 = branch21app.admin_dashboard_calculations_br21.total_collection_advance()
     prestige_advance2 = branch22app.admin_dashboard_calculations_br22.total_collection_advance()
     prestige_advance3 = branch23app.admin_dashboard_calculations_br23.total_collection_advance()
+    prestige_advance3sub = branch25app.admin_dashboard_calculations_br25.total_collection_advance()
     prestige_advance4 = branch24app.admin_dashboard_calculations_br24.total_collection_advance()
+    prestige_advance5 = branch26app.admin_dashboard_calculations_br26.total_collection_advance()
 
     perfect_advance1 = branch31app.admin_dashboard_calculations_br31.total_collection_advance()
     perfect_advance2 = branch32app.admin_dashboard_calculations_br32.total_collection_advance()
@@ -126,7 +133,7 @@ def total_collection_details(request):
 
     comfort_ladies_advance1 = branch51app.admin_dashboard_calculations_br51.total_collection_advance()
     comfort_ladies_advance2 = branch52app.admin_dashboard_calculations_br52.total_collection_advance()
-    comfort_ladies_advance3 = branch53app.admin_dashboard_calculations_br53.total_collection_advance()
+    #comfort_ladies_advance3 = branch53app.admin_dashboard_calculations_br53.total_collection_advance()
 
     comfort_advance = []
     comfort_advance.append(comfort_advance1)
@@ -142,7 +149,9 @@ def total_collection_details(request):
     prestige_advance.append(prestige_advance1)
     prestige_advance.append(prestige_advance2)
     prestige_advance.append(prestige_advance3)
+    prestige_advance.append(prestige_advance3sub)
     prestige_advance.append(prestige_advance4)
+    prestige_advance.append(prestige_advance5)
 
     perfect_advance = []
     perfect_advance.append(perfect_advance1)
@@ -157,7 +166,7 @@ def total_collection_details(request):
     comfort_ladies_advance = []
     comfort_ladies_advance.append(comfort_ladies_advance1)
     comfort_ladies_advance.append(comfort_ladies_advance2)
-    comfort_ladies_advance.append(comfort_ladies_advance3)
+    #comfort_ladies_advance.append(comfort_ladies_advance3)
 
     comfort_advance = sum(comfort_advance)
     prestige_advance = sum(prestige_advance)
@@ -165,7 +174,7 @@ def total_collection_details(request):
     happy_homes_advance = sum(happy_homes_advance)
     comfort_ladies_advance = sum(comfort_ladies_advance)
     total_advance_amount = comfort_advance + prestige_advance + perfect_advance + happy_homes_advance + comfort_ladies_advance
-    print('this is total branch total_advance_amount sum', total_advance_amount)
+
 
 
     ###ADVANCE CALCULATIONS END HERE ##########
@@ -184,7 +193,9 @@ def total_collection_details(request):
     prestige_discount1 = branch21app.admin_dashboard_calculations_br21.total_discount()
     prestige_discount2 = branch22app.admin_dashboard_calculations_br22.total_discount()
     prestige_discount3 = branch23app.admin_dashboard_calculations_br23.total_discount()
+    prestige_discount3sub = branch25app.admin_dashboard_calculations_br25.total_discount()
     prestige_discount4 = branch24app.admin_dashboard_calculations_br24.total_discount()
+    prestige_discount5 = branch25app.admin_dashboard_calculations_br25.total_discount()
 
     perfect_discount1 = branch31app.admin_dashboard_calculations_br31.total_discount()
     perfect_discount2 = branch32app.admin_dashboard_calculations_br32.total_discount()
@@ -196,7 +207,7 @@ def total_collection_details(request):
 
     comfort_ladies_discount1 = branch51app.admin_dashboard_calculations_br51.total_discount()
     comfort_ladies_discount2 = branch52app.admin_dashboard_calculations_br52.total_discount()
-    comfort_ladies_discount3 = branch53app.admin_dashboard_calculations_br53.total_discount()
+    #comfort_ladies_discount3 = branch53app.admin_dashboard_calculations_br53.total_discount()
 
     comfort_discount = []
     comfort_discount.append(comfort_discount1)
@@ -212,7 +223,9 @@ def total_collection_details(request):
     prestige_discount.append(prestige_discount1)
     prestige_discount.append(prestige_discount2)
     prestige_discount.append(prestige_discount3)
+    prestige_discount.append(prestige_discount3sub)
     prestige_discount.append(prestige_discount4)
+    prestige_discount.append(prestige_discount5)
 
     perfect_discount = []
     perfect_discount.append(perfect_discount1)
@@ -227,7 +240,7 @@ def total_collection_details(request):
     comfort_ladies_discount = []
     comfort_ladies_discount.append(comfort_ladies_discount1)
     comfort_ladies_discount.append(comfort_ladies_discount2)
-    comfort_ladies_discount.append(comfort_ladies_discount3)
+    #comfort_ladies_discount.append(comfort_ladies_discount3)
 
     comfort_discount = sum(comfort_discount)
     prestige_discount = sum(prestige_discount)
@@ -236,7 +249,7 @@ def total_collection_details(request):
     comfort_ladies_discount = sum(comfort_ladies_discount)
 
     total_discount_amount = comfort_discount + prestige_discount + perfect_discount + happy_homes_discount + comfort_ladies_discount
-    print('this is total branch total_discount_amount sum', total_discount_amount)
+
 
     ###DISCOUNT CALCULATIONS END HERE ##########
 
@@ -265,7 +278,9 @@ def total_collection_details(request):
     prestige_total_collected_amount1 = branch21app.admin_dashboard_calculations_br21.total_collected_amount()
     prestige_total_collected_amount2 = branch22app.admin_dashboard_calculations_br22.total_collected_amount()
     prestige_total_collected_amount3 = branch23app.admin_dashboard_calculations_br23.total_collected_amount()
+    prestige_total_collected_amount3sub = branch25app.admin_dashboard_calculations_br25.total_collected_amount()
     prestige_total_collected_amount4 = branch24app.admin_dashboard_calculations_br24.total_collected_amount()
+    prestige_total_collected_amount5 = branch26app.admin_dashboard_calculations_br26.total_collected_amount()
 
     perfect_total_collected_amount1 = branch31app.admin_dashboard_calculations_br31.total_collected_amount()
     perfect_total_collected_amount2 = branch32app.admin_dashboard_calculations_br32.total_collected_amount()
@@ -277,14 +292,14 @@ def total_collection_details(request):
 
     comfort_ladies_total_collected_amount1 = branch51app.admin_dashboard_calculations_br51.total_collected_amount()
     comfort_ladies_total_collected_amount2 = branch52app.admin_dashboard_calculations_br52.total_collected_amount()
-    comfort_ladies_total_collected_amount3 = branch53app.admin_dashboard_calculations_br53.total_collected_amount()
+    #comfort_ladies_total_collected_amount3 = branch53app.admin_dashboard_calculations_br53.total_collected_amount()
 
     comfort_total_collected_amount = []
     comfort_total_collected_amount.append(comfort_total_collected_amount1)
     comfort_total_collected_amount.append(comfort_total_collected_amount2)
     comfort_total_collected_amount.append(comfort_total_collected_amount3)
     comfort_total_collected_amount.append(comfort_total_collected_amount4)
-    comfort_total_collected_amount.append(comfort_ladies_total_collected_amount3)
+    comfort_total_collected_amount.append(comfort_total_collected_amount4sub)
     comfort_total_collected_amount.append(comfort_total_collected_amount5)
     comfort_total_collected_amount.append(comfort_total_collected_amount6)
     comfort_total_collected_amount.append(comfort_total_collected_amount7)
@@ -293,7 +308,9 @@ def total_collection_details(request):
     prestige_total_collected_amount.append(prestige_total_collected_amount1)
     prestige_total_collected_amount.append(prestige_total_collected_amount2)
     prestige_total_collected_amount.append(prestige_total_collected_amount3)
+    prestige_total_collected_amount.append(prestige_total_collected_amount3sub)
     prestige_total_collected_amount.append(prestige_total_collected_amount4)
+    prestige_total_collected_amount.append(prestige_total_collected_amount5)
 
     perfect_total_collected_amount = []
     perfect_total_collected_amount.append(perfect_total_collected_amount1)
@@ -308,7 +325,7 @@ def total_collection_details(request):
     comfort_ladies_total_collected_amount = []
     comfort_ladies_total_collected_amount.append(comfort_ladies_total_collected_amount1)
     comfort_ladies_total_collected_amount.append(comfort_ladies_total_collected_amount2)
-    comfort_ladies_total_collected_amount.append(comfort_ladies_total_collected_amount3)
+    #comfort_ladies_total_collected_amount.append(comfort_ladies_total_collected_amount3)
 
     comfort_total_collected_amount = sum(comfort_total_collected_amount)
     prestige_total_collected_amount = sum(prestige_total_collected_amount)
@@ -318,7 +335,6 @@ def total_collection_details(request):
 
     total_collected_amount = comfort_total_collected_amount + prestige_total_collected_amount + perfect_total_collected_amount + happy_homes_total_collected_amount + comfort_ladies_total_collected_amount
 
-    print('this is total branch total_collected_amount sum', total_collected_amount)
 
     ###TOTAL COLLECTED AMOUNT END HERE ############
 
@@ -336,7 +352,9 @@ def total_collection_details(request):
     prestige_due_amount1 = branch21app.admin_dashboard_calculations_br21.total_due()
     prestige_due_amount2 = branch22app.admin_dashboard_calculations_br22.total_due()
     prestige_due_amount3 = branch23app.admin_dashboard_calculations_br23.total_due()
+    prestige_due_amount3sub = branch25app.admin_dashboard_calculations_br25.total_due()
     prestige_due_amount4 = branch24app.admin_dashboard_calculations_br24.total_due()
+    prestige_due_amount5 = branch26app.admin_dashboard_calculations_br26.total_due()
 
     perfect_due_amount1 = branch31app.admin_dashboard_calculations_br31.total_due()
     perfect_due_amount2 = branch32app.admin_dashboard_calculations_br32.total_due()
@@ -348,7 +366,7 @@ def total_collection_details(request):
 
     comfort_ladies_due_amount1 = branch51app.admin_dashboard_calculations_br51.total_due()
     comfort_ladies_due_amount2 = branch52app.admin_dashboard_calculations_br52.total_due()
-    comfort_ladies_due_amount3 = branch53app.admin_dashboard_calculations_br53.total_due()
+    #comfort_ladies_due_amount3 = branch53app.admin_dashboard_calculations_br53.total_due()
 
     comfort_due_amount = []
     comfort_due_amount.append(comfort_due_amount1)
@@ -364,7 +382,9 @@ def total_collection_details(request):
     prestige_due_amount.append(prestige_due_amount1)
     prestige_due_amount.append(prestige_due_amount2)
     prestige_due_amount.append(prestige_due_amount3)
+    prestige_due_amount.append(prestige_due_amount3sub)
     prestige_due_amount.append(prestige_due_amount4)
+    prestige_due_amount.append(prestige_due_amount5)
 
     perfect_due_amount = []
     perfect_due_amount.append(perfect_due_amount1)
@@ -379,7 +399,7 @@ def total_collection_details(request):
     comfort_ladies_due_amount = []
     comfort_ladies_due_amount.append(comfort_ladies_due_amount1)
     comfort_ladies_due_amount.append(comfort_ladies_due_amount2)
-    comfort_ladies_due_amount.append(comfort_ladies_due_amount3)
+    #comfort_ladies_due_amount.append(comfort_ladies_due_amount3)
 
     comfort_due_amount = sum(comfort_due_amount)
     prestige_due_amount = sum(prestige_due_amount)
@@ -481,7 +501,6 @@ def total_advance():
     #l.append(a16)
 
     gtc = sum(l)
-    print('this is total branch gtc sum', gtc)
     return gtc
 
 def total_discount():
@@ -525,7 +544,6 @@ def total_discount():
     #l.append(a16)
 
     gtc = sum(l)
-    print('this is total branch gtc sum', gtc)
     return gtc
 
 def all_total_collatable_amount():
@@ -569,7 +587,6 @@ def all_total_collatable_amount():
     #l.append(a16)
 
     gtc = sum(l)
-    print('this is total branch gtc sum', gtc)
     return gtc
 
 def all_total_collected_amount():
@@ -613,7 +630,6 @@ def all_total_collected_amount():
     #l.append(a16)
 
     gtc = sum(l)
-    print('this is total branch gtc sum', gtc)
     return gtc
 
 def all_total_due():

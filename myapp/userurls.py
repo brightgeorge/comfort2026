@@ -3,6 +3,7 @@ from . import views
 from . import guest_calculations
 from . import room_vacant_calculations
 from . import collection_calculations
+from . import comfort_total_collection_calculations
 
 urlpatterns = [
 
