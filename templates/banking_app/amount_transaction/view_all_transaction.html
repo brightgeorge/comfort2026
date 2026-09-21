@@ -162,6 +162,23 @@
               <input type="button" value="<< Back " style="background-color:red;color:white;">
             </a>
 
+
+
+            <button type="button"
+        onclick="downloadExcel()"
+        style="
+            background-color:green;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        ">
+    Download Excel
+</button>
+
+
+
             <!--
             <div class="col-12 col-lg-6 col-xl-4 border-light">
                 <div class="card-body">
@@ -379,6 +396,119 @@
 
   <!-- Index js -->
   <script src="{% static 'admindashboard//assets/js/index.js' %}"></script>
+
+
+
+
+     <script>
+
+function downloadExcel() {
+
+    var table = document.querySelector("table");
+
+    var rows = table.querySelectorAll("tr");
+
+    var excelHTML = `
+    <html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+    <table border="1">
+
+        <tr style="background-color:#008000;color:white;font-weight:bold;">
+            <th>Sl No</th>
+            <th>Member Name</th>
+            <th>Particulars</th>
+            <th>Transaction Amount</th>
+            <th>Date</th>
+            <th>Transaction Enter Date</th>
+            <th>Transaction Enter Time</th>
+        </tr>
+    `;
+
+    // Loop through table rows
+    rows.forEach(function(row, index) {
+
+        // Skip header row
+        if (index === 0) {
+            return;
+        }
+
+        var cells = row.querySelectorAll("td");
+
+        // Grand Total row
+        if (row.innerText.includes("Grand Total")) {
+
+            excelHTML += `
+                <tr style="background-color:#008000;color:white;font-weight:bold;">
+                    <td></td>
+                    <td></td>
+                    <td>Grand Total:</td>
+                    <td>${cells[1] ? cells[1].innerText.trim() : ""}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            `;
+
+            return;
+        }
+
+        // Normal transaction row
+        if (cells.length >= 8) {
+
+            excelHTML += `
+                <tr>
+                    <td>${cells[1].innerText.trim()}</td>
+                    <td>${cells[2].innerText.trim()}</td>
+                    <td>${cells[3].innerText.trim()}</td>
+                    <td>${cells[4].innerText.trim()}</td>
+                    <td>${cells[5].innerText.trim()}</td>
+                    <td>${cells[6].innerText.trim()}</td>
+                    <td>${cells[7].innerText.trim()}</td>
+                </tr>
+            `;
+        }
+
+    });
+
+    excelHTML += `
+    </table>
+
+    </body>
+    </html>
+    `;
+
+    // Create Excel file
+    var blob = new Blob(
+        ['\ufeff', excelHTML],
+        {
+            type: 'application/vnd.ms-excel'
+        }
+    );
+
+    // Download
+    var url = URL.createObjectURL(blob);
+
+    var downloadLink = document.createElement("a");
+
+    downloadLink.href = url;
+    downloadLink.download = "transactions.xls";
+
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
+
+    URL.revokeObjectURL(url);
+}
+
+</script>
+
 
 
 </body>

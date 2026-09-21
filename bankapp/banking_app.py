@@ -202,7 +202,7 @@ def view_all_transaction_byid(request, id, mth):
             member_name=id,
             month=mth,
             flag = 1
-        ).order_by('-id')
+        )
 
         result = transactions.aggregate(
             total=Sum('transaction_amount')
@@ -219,7 +219,8 @@ def view_all_transaction_byid(request, id, mth):
 def view_all_transaction(request):
     if 'username' in request.session:
         context={
-            'transactions': bank_amount_transaction.objects.all().order_by('-id'),
+            #'transactions': bank_amount_transaction.objects.all().order_by('-id'),
+            'transactions': bank_amount_transaction.objects.all(),
         }
         return render(request,'banking_app/amount_transaction/view_all_transaction.html', context)
     return render(request,'index.html')
