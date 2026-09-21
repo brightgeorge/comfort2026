@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'prestige1mess81app',
 
     'ledger_app',
+    'bankapp',
 ]
 
 MIDDLEWARE = [
