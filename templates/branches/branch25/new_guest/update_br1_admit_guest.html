@@ -255,8 +255,9 @@
          <div class="card">
            <div class="card-body">
 		  <a href="{% url 'view_all_new_guest_ob_ch25' %}"> <button class="mybutton button1">X Close</button></a>
-           <div class="card-title">Update Guest Form </div>
-
+           <div class="card-title" style="text-align:center;">GUEST UPDATE FORM
+           <br>{{sd.name}} Join Date: {{sd.guest_join_date}}
+           </div>
 
                {% if messages %}
                 {% for message in messages %}

@@ -299,8 +299,9 @@ function exportTableToExcel(tableID, filename = ''){
                  <tr>
                      <th> <a href="{% url 'view_all_new_guest_ob_ch5' %}"> <button style="background-color:green;color:white;"> <= Back</button> </a></th>
                       <th style="text-align:center" bgcolor="blue"><button onclick="exportTableToExcel ('tbldata','Open Bright - Order')">download</button></th>
-                     <th> <a href=""> <button style="background-color:green;color:white;"> <= test shift</button> </a></th>
+                     <th> <a href="{% url 'guest_rent_update_ob_ch5' %}"> <button style="background-color:green;color:white;"> UPDATE RENT</button> </a></th>
                  <th><button onclick="window.print()">Print</button></th>
+
                  </tr>
            <div class="table-responsive">
               <table class="table table-bordered" id="tbldata" border="1">
