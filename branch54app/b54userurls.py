@@ -7,6 +7,7 @@ from . import reports54
 from . import payment54
 from . import admin_dashboard_calculations_br54
 from . import accounts54
+from . import branch_settings54
 
 urlpatterns = [
 
@@ -653,6 +654,13 @@ urlpatterns = [
     path('view_deleted_share_holders54', accounts54.view_deleted_share_holders54, name='view_deleted_share_holders54'),
 
     path('regi_multiple_share_holders54', accounts54.regi_multiple_share_holders54, name='regi_multiple_share_holders54'),
+
+    #############BRANCH SETTINGS START HERE ########################
+
+    path('guest_rent_update_ob_ch54/', branch_settings54.guest_rent_update_ob_ch54, name='guest_rent_update_ob_ch54'),
+
+    ############BRANCH SETTINGS END HERE ############################
+
 
 ]
 
