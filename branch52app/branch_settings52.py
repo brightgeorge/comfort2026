@@ -6,7 +6,7 @@ from django.contrib import messages
 from branch52app.models import *
 import datetime
 from . import admin_dashboard_calculations_br52
-import branch53app
+import branch52app
 
 def guest_rent_update_ob_ch52(request):
     #current_room_rent = request.POST.get('current_room_rent')
